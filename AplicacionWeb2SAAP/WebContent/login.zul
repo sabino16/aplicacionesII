@@ -1,0 +1,28 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Inicio de Sesion" mode="modal" border="normal" width="400px" apply="com.aplicaciones.controlador.LoginControlador">
+	<grid>
+		<columns>
+			<column label=""/>
+			<column label=""/>
+		</columns>
+		<rows>
+			<row>	
+				<label value="Usuario"></label>
+				<textbox id="txtUsuario" constraint="no empty"></textbox>
+
+			</row>
+			<row>
+				<label value="Password"></label>
+				<textbox id="txtPassword" type="password"></textbox>
+			</row>
+			<row align="center" spans="2">
+				<button label="Ingresar" id="btnIngresar" />
+			</row>
+			<row align="center" spans="2">
+				<label id="lblMensaje" style="color:red" value="Mensaje"></label>
+			</row>
+		</rows>
+	</grid>
+</window>
+</zk>
