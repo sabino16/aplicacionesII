@@ -1,6 +1,27 @@
 <?page title="Auto Generated index.zul"?>
-<window title="Hello World!!" border="normal" width="200px">
+<window title="Sistema Taximetro Virtual" style="text-align:'center'" border="normal" width="100%" height="100%" apply="com.aplicaciones.controlador.IndexControlador">
+<borderlayout>
+    <north>
+    	<div>
+    		<image src="Imagenes/taxi_banner.jpg"  width="100%" height="250px"/>
+			<menubar id="barraMenu"/>	
+    	</div>
+    </north>
+	
+	<west autoscroll="true" minsize="200" maxsize="300" title="Opciones" splittable="true" collapsible="true" width="20%">
+		<div align="center">
+			
+			<label id="lblUsuario"></label>
+			<separator/>
+			<label id="lblNombre"></label>
+			<separator/>
+			<button label="Iniciar Sesión" id="btnIniciararSesion" />
+		</div>
+	</west>
+	
+	<center id="centro">	
+		<label>Bienvenido taximetro virtual</label>
+	</center>
 
-<label value="You are using: ${desktop.webApp.version}"/>
-
+</borderlayout>
 </window>
