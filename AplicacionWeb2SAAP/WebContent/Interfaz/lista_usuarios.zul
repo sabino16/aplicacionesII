@@ -1,0 +1,35 @@
+<?page title="Lista de Usuarios" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Lista de Usuarios" border="normal" height="100%" id="WinListaUsuarios"
+apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+<listbox id="listaUsuarios" mold="paging" pageSize="5"
+		multiple="false" width="100%"
+		emptyMessage="No clients found in the result">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Lista de Usuarios" colspan="1"
+				rowspan="1" />
+		</auxhead>
+		<auxhead sclass="category-center">
+
+			<auxheader colspan="1" rowspan="1">
+				<label value="Apellidos "></label>
+				<textbox id="textbox_Apellidos" ></textbox>
+			</auxheader>
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Apellidos" sort="auto(apellido)"/>
+			<listheader label="Nombres" sort="auto(nombre)"/>
+			<listheader label="Tipo de Usuario" sort="auto(tipoUsuario.descripcion)"/>
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.apellido} " />
+				<listcell label="${each.nombre} " />
+				<listcell label="${each.tipoUsuario.descripcion} " />
+			</listitem>
+		</template>
+	</listbox>
+</window>
+</zk>

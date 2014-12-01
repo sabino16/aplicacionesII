@@ -1,0 +1,61 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window style="text-align:'center'" title="FORMULARIO USUARIOS" border="none" width="100%" height="100%"
+apply="com.aplicaciones.controlador.UsuarioControlador" >
+<separator></separator>
+	<separator></separator>
+	<grid width="90%" >
+			<rows>
+			
+				<row>
+					<label value="Apellidos:" />
+					<textbox id="textbox_Apellidos" constraint="no empty" width="80%"/>
+				</row>
+				<row>
+					<label value="Nombres:" />
+					<textbox id="textbox_Nombres" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row>
+					<label value="Tipo de Usuario:" />
+					<combobox id="cbbTipoUsuario"  autodrop="true" width="80%">
+						<template name="model">
+							<comboitem label="${each.descripcion}" value="${each.idTipousuario}" />
+						</template>
+					</combobox >
+				</row>
+				
+				<row>
+					<label value="Cédula:" />
+					<textbox id="textbox_Cedula" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row>
+					<label value="E-mail" />
+					<textbox id="textbox_Email" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row>
+					<label value="User:" />
+					<textbox id="textbox_User" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row>
+					<label value="Contraseña:" />
+					<textbox id="textbox_Password" type="password" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row>
+					<label value="Confirmar contraseña:" />
+					<textbox id="textbox_PasswordC" type="password" constraint="no empty" width="80%"/>
+				</row>
+				
+				<row align="center">
+					<button id="btnOpcion" label="" width="20%" visible="false"/>
+					<button id="btnLimpiar" label="Limpiar" width="20%"/>
+				</row>
+				
+			</rows>
+		</grid>
+</window>
+</zk>
