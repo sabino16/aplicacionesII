@@ -1,8 +1,11 @@
 package com.aplicaciones.controlador;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
@@ -12,6 +15,7 @@ import org.zkoss.zul.Menu;
 import org.zkoss.zul.Menubar;
 import org.zkoss.zul.Menuitem;
 import org.zkoss.zul.Menupopup;
+import org.zkoss.zul.Window;
 
 
 import com.aplicaciones.modelo.Usuario;
@@ -48,13 +52,13 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		menuitemUEditar.setVisible(false);
 		menuitemUEliminar.setVisible(false);
 		menuitemUVisualizar.setVisible(false);
-		menuitemUIngresar.setValue("InterfazHotel/ClientesFormuario.zul");
-		//menuitemCIngresar.addEventListener("onClick", new MenuListener());
-		menuitemUEditar.setValue("InterfazHotel/ListaClientes.zul");
-		//menuitemCEditar.addEventListener("onClick", new MenuListener());
-		menuitemUEliminar.setValue("InterfazHotel/ListaClientes.zul");
-		//menuitemCEliminar.addEventListener("onClick", new MenuListener());
-		menuitemUVisualizar.setValue("InterfazHotel/ListaClientes.zul");
+		menuitemUIngresar.setValue("Interfaz/usuario.zul");
+		menuitemUIngresar.addEventListener("onClick", new MenuListener());
+		menuitemUEditar.setValue("Interfaz/lista_usuarios.zul");
+		menuitemUEditar.addEventListener("onClick", new MenuListener());
+		menuitemUEliminar.setValue("Interfaz/lista_usuarios.zul");
+		menuitemUEliminar.addEventListener("onClick", new MenuListener());
+		menuitemUVisualizar.setValue("Interfaz/lista_usuarios.zul");
 		//menuitemCVisualizar.addEventListener("onClick", new MenuListener());
 		menuCliente.appendChild(menuitemUIngresar);
 		menuCliente.appendChild(menuitemUEditar);
@@ -89,6 +93,33 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		barraMenu.appendChild(menuReportes);
 		
 	}
+	
+	//clase interna
+		class MenuListener implements EventListener<Event>{
+
+			@Override
+			public void onEvent(Event arg0) throws Exception {
+				// obtener la ruta del zul a cargar
+				Menuitem itemseleccionado = (Menuitem)arg0.getTarget();
+				String pagina = itemseleccionado.getValue();
+				// eliminar lo que haya en el centro
+				
+				if(centro.getFirstChild()!=null){
+					centro.removeChild(centro.getFirstChild());
+				}
+				//crear ventanas
+				
+				String s = itemseleccionado.getLabel();
+				Session session;
+				session=Sessions.getCurrent();
+				session.setAttribute("accion", s);
+				
+				Window win = (Window)Executions.createComponents(pagina, centro, null);
+				
+			}
+			
+		}
+	
 	
 	public void doAfterCompose(Component comp) throws Exception {
 		// TODO Auto-generated method stub
