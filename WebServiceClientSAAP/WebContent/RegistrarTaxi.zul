@@ -1,0 +1,21 @@
+<?page title="Registro de Taxi" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Registro de Taxi" border="normal">
+<grid width="80%">
+<rows >
+	<row>
+		<label value="Cooperativa:" />
+		<textbox id="textbox_cooperativa" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Placa:" />
+		<textbox id="textbox_placa" constraint="no empty" />
+	</row>
+	<row>
+		<button label="GUARDAR" onClick="" />
+		<button label="CANCELAR" onClick="" />
+	</row>
+</rows>
+</grid>
+</window>
+</zk>

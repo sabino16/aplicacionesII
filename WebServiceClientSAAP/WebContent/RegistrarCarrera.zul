@@ -1,0 +1,57 @@
+<?page title="REGISTRO DE CARRERA" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="REGISTRO DE CARRERA" border="normal">
+<grid width="80%">
+<rows >
+	<row>
+		<label value="Taxi:" />
+		<combobox id="cbbTaxi"  autodrop="true" width="100%">
+			<template name="model">
+				<comboitem label="${each.placa}" value="${each.id_taxi}" />
+			</template>
+		</combobox >
+	</row>
+	<row>
+		<label value="Tarifa:" />
+		<combobox id="cbbTarifa"  autodrop="true" width="100%">
+			<template name="model">
+				<comboitem label="${each.tipo_tarifa}" value="${each.id_tarifa}" />
+			</template>
+		</combobox >
+	</row>
+	<row>
+		<label value="Pasajero:" />
+		<textbox id="textbox_pasajero" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Origen:" />
+		<textbox id="textbox_origen" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Destino:" />
+		<textbox id="textbox_destino" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Tiempo:" />
+		<textbox id="textbox_tiempo" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Velocidad:" />
+		<textbox id="textbox_velocidad" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Precio:" />
+		<doublebox id="textbox_precio" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Fecha:" />
+		<datebox id="datebox_Inicio"/>
+	</row>
+	<row>
+		<button label="GUARDAR" onClick="" />
+		<button label="CANCELAR" onClick="" />
+	</row>
+</rows>
+</grid>
+</window>
+</zk>

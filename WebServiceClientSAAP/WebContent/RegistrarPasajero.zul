@@ -1,0 +1,37 @@
+<?page title="Registro de Pasajero" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Registro de Pasajero" border="normal">
+<grid width="80%">
+<rows>
+	<row>
+		<label value="Nombre:" />
+		<textbox id="textbox_nombre" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Apellido:" />
+		<textbox id="textbox_apellido" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Correo:" />
+		<textbox id="textbox_correo" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Cedula:" />
+		<textbox id="textbox_cedula" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Usuario:" />
+		<textbox id="textbox_usuario" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Password:" />
+		<doublebox id="textbox_password" constraint="no empty" />
+	</row>
+	<row>
+		<button label="GUARDAR" onClick="" />
+		<button label="CANCELAR" onClick="" />
+	</row>
+</rows>
+</grid>
+</window>
+</zk>
