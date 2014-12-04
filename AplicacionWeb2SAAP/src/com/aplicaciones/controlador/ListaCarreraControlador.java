@@ -146,5 +146,40 @@ public class ListaCarreraControlador extends GenericForwardComposer<Component> {
 		gh.closeEntityManager(em);
 		}
 	
+	public void onChange$textbox_Nombre(){
+		if(textbox_Apellidos.getValue().equals("") && textbox_Placa.getValue().equals("")){
+			filtrarNombre();
+		}else{
+			alert("Seleccione mas parametros de busqueda");
+		}
+		if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+			cargarListaCarreras();
+		}
+	}
+
+public void onChange$textbox_Apellidos(){
+	if(textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+		filtrarApellido();
+	}else{
+		alert("Seleccione mas parametros de busqueda");
+	}
+	if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+		cargarListaCarreras();
+	}
+}
+
+public void onChange$textbox_Placa(){
+	if(textbox_Nombre.getValue().equals("") && textbox_Apellidos.getValue().equals("")){
+		filtrarPlaca();
+	}else{
+		alert("Seleccione mas parametros de busqueda");
+	}
+	if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+		cargarListaCarreras();
+	}
+}
+
+	
+	
 
 }

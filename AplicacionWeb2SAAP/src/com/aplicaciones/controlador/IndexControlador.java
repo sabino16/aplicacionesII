@@ -72,8 +72,8 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		Menupopup menuHabitacion = new Menupopup();
 		menuitemCVisualizar = new Menuitem("Visualizar");
 		menuitemCVisualizar.setVisible(false);
-		menuitemCVisualizar.setValue("InterfazHotel/ListaHabitaciones.zul");
-		//menuitemHVisualizar.addEventListener("onClick", new MenuListener());
+		menuitemCVisualizar.setValue("InterfazHotel/Lista_carrera.zul");
+		menuitemCVisualizar.addEventListener("onClick", new MenuListener());
 				
 		menuHabitacion.appendChild(menuitemCVisualizar);
 		menuCarreras.appendChild(menuHabitacion);

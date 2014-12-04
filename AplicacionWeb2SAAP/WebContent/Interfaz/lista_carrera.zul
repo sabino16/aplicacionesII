@@ -1,7 +1,7 @@
 <?page title="Lista de Carreras" contentType="text/html;charset=UTF-8"?>
 <zk>
 <window title="Lista de Carreras" border="normal" height="100%" id="WinListaCarreras"
-apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+apply="com.aplicaciones.controlador.ListaCarreraControlador">
 
 
 	<auxhead sclass="category-center" >
@@ -43,7 +43,7 @@ apply="com.aplicaciones.controlador.ListaUsuarioControlador">
 			<listheader label="Cooperativa" sort="auto(taxi.cooperativa)" width="10%"/>
 			<listheader label="Nombres" sort="auto(usuario.nombre)" width="8%"/>
 			<listheader label="Apellidos" sort="auto(usuario.apellidos)" width="8.3%"/>
-			<listheader label="Tipo de Usuario" sort="auto(usuario.tipoUsuario.descripcion)" width="12.8%"/>
+			<listheader label="Tipo de Usuario" sort="auto(usuario.tipoUsuario.descripcion)" width="11%"/>
 			<listheader label="Tipo de tarifa" sort="auto(tarifa.tipoTarifa)" width="11%"/>
 			<listheader label="Origen" sort="auto(origen)" width="7%"/>
 			<listheader label="Destino" sort="auto(destino)" width="8%"/>
