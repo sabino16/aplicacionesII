@@ -1,0 +1,73 @@
+<?page title="Lista de Carreras" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Lista de Carreras" border="normal" height="100%" id="WinListaCarreras"
+apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+
+
+	<auxhead sclass="category-center" >
+			<auxheader label="Lista de Carreras" colspan="7"
+				rowspan="1" />
+		</auxhead>
+		
+		
+		<auxhead sclass="category-center">
+			<auxheader colspan="1" rowspan="1">
+				<label value="Nombre "></label>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<textbox id="textbox_Nombre" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<label value="Apellidos "></label>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+			    <textbox id="textbox_Apellidos" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<label value="Placa del taxi "></label>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<textbox id="textbox_Placa" ></textbox>
+			</auxheader>
+		</auxhead>
+			
+
+<listbox id="listaCarreras" mold="paging" pageSize="5"
+		multiple="false" width="100%"
+		emptyMessage="No clients found in the result">
+		
+		
+		
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Placa Taxi" sort="auto(taxi.placa)" width="9%" />
+			<listheader label="Cooperativa" sort="auto(taxi.cooperativa)" width="10%"/>
+			<listheader label="Nombres" sort="auto(usuario.nombre)" width="8%"/>
+			<listheader label="Apellidos" sort="auto(usuario.apellidos)" width="8.3%"/>
+			<listheader label="Tipo de Usuario" sort="auto(usuario.tipoUsuario.descripcion)" width="12.8%"/>
+			<listheader label="Tipo de tarifa" sort="auto(tarifa.tipoTarifa)" width="11%"/>
+			<listheader label="Origen" sort="auto(origen)" width="7%"/>
+			<listheader label="Destino" sort="auto(destino)" width="8%"/>
+			<listheader label="Tiempo" sort="auto(tiempo)" width="7%"/>
+			<listheader label="Velocidad" sort="auto(velocidad)" width="8%"/>
+			<listheader label="Precio" sort="auto(precio)" width="6.5%"/>
+			<listheader label="Fecha" sort="auto(fecha)" width="6%"/>
+		</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.taxi.placa} " />
+				<listcell label="${each.taxi.cooperativa} " />
+				<listcell label="${each.usuario.nombre} " />
+				<listcell label="${each.usuario.apellidos} " />
+				<listcell label="${each.usuario.tipoUsuario.descripcion} " />
+				<listcell label="${each.tarifa.tipoTarifa} " />
+				<listcell label="${each.origen} " />
+				<listcell label="${each.destino} " />
+				<listcell label="${each.tiempo} " />
+				<listcell label="${each.velocidad} " />
+				<listcell label="${each.precio} " />
+				<listcell label="${each.fecha} " />
+			</listitem>
+		</template>
+	</listbox>
+</window>
+</zk>
