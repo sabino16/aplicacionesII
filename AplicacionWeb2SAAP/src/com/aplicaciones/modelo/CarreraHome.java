@@ -83,7 +83,7 @@ public class CarreraHome {
 	public List<Carrera> findAll() { //DEVUELVE UNA LISTA DE CLIENTES
 		log.debug("getting Reservacion instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
 		try {
-			List<Carrera> lista = getEntityManager().createQuery("from Carrera where estado='0'").getResultList();
+			List<Carrera> lista = getEntityManager().createQuery("select c.* from usuario as u, taxi as tax, carrera as c, tarifa as t where c.id_usuario=u.id_usuario and c.id_taxi=tax.id_taxi and c.id_tarifa=t.id_tarifa  and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'").getResultList();
 			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
 			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
 			log.debug("get successful");	//MENSAJE EN CONSOLA
@@ -100,11 +100,12 @@ public class CarreraHome {
 			String placa){
 		try{
 		List<Carrera> lista;
-		String sql = "select r from Reservacion r, Cliente c, Habitacion h, TipoTemporada tt "+
-					" where r.estado='0' and h.numero = :numero and c.apellidos like :apellidos "+ 
-					" and tt.descripcion like :temporada and ((r.fechaInicio between :inicio1 and :salida1) or "+ 
-					" (r.fechaSalida between :inicio2 and :salida2) ) and c.idCliente = r.cliente.idCliente "+
-					" and h.numero = r.habitacion.numero and tt.idTipoTemporada = r.tipoTemporada.idTipoTemporada";  
+		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
+      "where c.id_usuario=u.id_usuario and"+ 
+      "c.id_taxi=tax.id_taxi and"+
+      "c.id_tarifa=t.id_tarifa"+  
+      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1' and " +
+      "u.nombre= :nombres and u.apellidos= :apellidos and tax.placa= :placa";  
 	
 		lista = entityManager.createQuery(sql).setParameter("nombres", "%"+nombres+"%")
 											.setParameter("apellidos", "%"+apellidos+"%")
@@ -119,9 +120,12 @@ public class CarreraHome {
 	public List<Carrera> filtrarNombre(String nombres){
 		try{
 		List<Carrera> lista;
-		String sql = "select r from Reservacion r, Habitacion h "+
-					" where r.estado='0' and h.numero = :numero  "+ 
-					" and h.numero = r.habitacion.numero ";  
+		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
+      "where c.id_usuario=u.id_usuario and"+ 
+      "c.id_taxi=tax.id_taxi and"+
+      "c.id_tarifa=t.id_tarifa"+  
+      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
+      "u.nombre= :nombres";  
 	
 		lista = entityManager.createQuery(sql).setParameter("nombres", "%"+nombres+"%").getResultList();
 		return lista;
@@ -134,10 +138,13 @@ public class CarreraHome {
 	public List<Carrera> filtrarApellido(String apellidos){
 		try{
 		List<Carrera> lista;
-		String sql = "select r from Reservacion r, Cliente c "+
-					" where r.estado='0' and c.apellidos like :apellidos "+ 
-					" and c.idCliente = r.cliente.idCliente ";  
-	
+		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
+			      "where c.id_usuario=u.id_usuario and"+ 
+			      "c.id_taxi=tax.id_taxi and"+
+			      "c.id_tarifa=t.id_tarifa"+  
+			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
+			      "u.apellido= :apellidos";
+		
 		lista = entityManager.createQuery(sql).setParameter("apellidos", "%"+apellidos+"%").getResultList();
 		return lista;
 		}catch(RuntimeException re){
@@ -149,11 +156,14 @@ public class CarreraHome {
 	public List<Carrera> filtrarPlaca(String placa){
 		try{
 		List<Carrera> lista;
-		String sql = "select r from Reservacion r, TipoTemporada tt "+
-					" where r.estado='0' "+ 
-					" and tt.descripcion like :temporada and tt.idTipoTemporada = r.tipoTemporada.idTipoTemporada";  
-	
-		lista = entityManager.createQuery(sql).setParameter("temporada", "%"+placa+"%")
+		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
+			      "where c.id_usuario=u.id_usuario and"+ 
+			      "c.id_taxi=tax.id_taxi and"+
+			      "c.id_tarifa=t.id_tarifa"+  
+			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
+			      "tax.placa= :placa";
+		
+		lista = entityManager.createQuery(sql).setParameter("placa", "%"+placa+"%")
 											.getResultList();
 		return lista;
 		}catch(RuntimeException re){

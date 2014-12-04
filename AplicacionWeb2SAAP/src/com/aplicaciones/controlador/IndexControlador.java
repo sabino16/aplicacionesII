@@ -151,7 +151,6 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		}else
 			{
 					btnIniciararSesion.setVisible(true);
-					//btnCerrarSesion.setVisible(false);
 					
 				}
 			}
