@@ -1,8 +1,7 @@
 package com.aplicaciones.modelo;
 
-// Generated 25/11/2014 07:33:32 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 04:19:32 PM by Hibernate Tools 3.4.0.CR1
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -10,8 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-
 
 /**
  * Home object for domain model class Carrera.
@@ -171,7 +168,6 @@ public class CarreraHome {
 			return null;
 		}
 	}
-	
 	
 	
 }

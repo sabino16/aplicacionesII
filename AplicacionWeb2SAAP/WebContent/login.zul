@@ -18,6 +18,7 @@
 			</row>
 			<row align="center" spans="2">
 				<button label="Ingresar" id="btnIngresar" />
+				
 			</row>
 			<row align="center" spans="2">
 				<label id="lblMensaje" style="color:red" value="Mensaje"></label>

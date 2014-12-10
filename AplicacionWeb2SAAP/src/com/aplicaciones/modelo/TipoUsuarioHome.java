@@ -1,12 +1,15 @@
 package com.aplicaciones.modelo;
 
-// Generated 25/11/2014 07:33:32 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 04:19:32 PM by Hibernate Tools 3.4.0.CR1
+
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 
 /**
  * Home object for domain model class TipoUsuario.
@@ -74,4 +77,19 @@ public class TipoUsuarioHome {
 			throw re;
 		}
 	}
+	
+	public List<TipoUsuario> findAll() { //DEVUELVE UNA LISTA DE CLIENTES
+		log.debug("getting Usuario instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
+		try {
+			List<TipoUsuario> lista = getEntityManager().createQuery("from TipoUsuario where estado='1'").getResultList();
+			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
+			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
+			log.debug("get successful");	//MENSAJE EN CONSOLA
+			return lista;
+		} catch (RuntimeException re) {	 //POSIBLE EXCEPCION
+			log.error("get failed in findAll: TipoUsuarioHome", re);
+			throw re;
+		}
+	}
+	
 }

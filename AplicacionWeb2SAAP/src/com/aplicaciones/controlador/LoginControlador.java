@@ -51,6 +51,7 @@ public class LoginControlador extends GenericForwardComposer<Component>{
 		}else{
 			lblMensaje.setValue("usuario y/o clave incorrectos");
 		}
+	
 		
 		em.getTransaction().commit();
 		gh.closeEntityManager(em);

@@ -5,7 +5,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class GeneralHome {
-EntityManagerFactory entityManagerFactory;
+
+	EntityManagerFactory entityManagerFactory;
 	
 	public EntityManager initEntityManager() {
 		 entityManagerFactory = Persistence.createEntityManagerFactory("AplicacionWeb2SAAP");
@@ -16,5 +17,6 @@ EntityManagerFactory entityManagerFactory;
 		entityManager.close();
 		entityManagerFactory.close();
 	}
-		
+	
+	
 }

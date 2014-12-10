@@ -1,12 +1,15 @@
 package com.aplicaciones.modelo;
 
-// Generated 25/11/2014 07:33:32 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 04:19:32 PM by Hibernate Tools 3.4.0.CR1
+
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 
 
 /**
@@ -76,6 +79,7 @@ public class UsuarioHome {
 		}
 	}
 	
+	
 	public Usuario buscarUsuario(String identificador, String contrasena){
 		try{
 			Usuario usuario=null;
@@ -89,4 +93,32 @@ public class UsuarioHome {
 				return null;
 			}
 	}
+	
+	public List<Usuario> filtrarPorApellidos(String apellido){
+		try{
+		List<Usuario> lista;
+		String sql = "select u from Usuario as u where u.estado='1' and (u.apellido like :apellido)";  
+	
+		lista = entityManager.createQuery(sql).setParameter("apellido", "%"+apellido+"%").getResultList();
+		return lista;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarPorApellidos: UsuarioHome" + re.getMessage());
+			return null;
+		}
+	}
+	
+	public List<Usuario> findAll() { //DEVUELVE UNA LISTA DE CLIENTES
+		log.debug("getting usuario instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
+		try {
+			List<Usuario> lista = entityManager.createQuery("from Usuario where estado='1'").getResultList();
+			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
+			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
+			log.debug("get successful");	//MENSAJE EN CONSOLA
+			return lista;
+		} catch (RuntimeException re) {	 //POSIBLE EXCEPCION
+			log.error("get failed in findAll: UsuarioHome", re);
+			throw re;
+		}
+	}
+	
 }

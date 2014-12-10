@@ -34,7 +34,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	Menuitem menuitemRVisualizar;
 	
 	@Wire
-	Button btnIniciararSesion;
+	Button btnIniciararSesion, btnCerrarSesion;
 	Center centro;
 	Label lblUsuario;
 	Label lblNombre;
@@ -59,7 +59,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		menuitemUEliminar.setValue("Interfaz/lista_usuarios.zul");
 		menuitemUEliminar.addEventListener("onClick", new MenuListener());
 		menuitemUVisualizar.setValue("Interfaz/lista_usuarios.zul");
-		//menuitemCVisualizar.addEventListener("onClick", new MenuListener());
+		menuitemUVisualizar.addEventListener("onClick", new MenuListener());
 		menuCliente.appendChild(menuitemUIngresar);
 		menuCliente.appendChild(menuitemUEditar);
 		menuCliente.appendChild(menuitemUEliminar);
@@ -132,13 +132,12 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		
 		if(user!=null){
 			
-			//btnCerrarSesion.setVisible(true);
+			btnCerrarSesion.setVisible(true);
 			btnIniciararSesion.setVisible(false);
-			lblUsuario.setValue("USUARIO: "+ user.getUser());
-			lblNombre.setValue("NOMBRE: "+ user.getNombre()+" "+user.getApellido());
-			
-			if(user.getTipoUsuario().getIdTipousuario() == 1)
-			{
+			if(user.getTipoUsuario().getIdTipousuario() == 2){
+
+				lblUsuario.setValue("USUARIO: "+ user.getUser());
+				lblNombre.setValue("NOMBRE: "+ user.getNombre()+" "+user.getApellido());
 				menuUsuarios.setVisible(true);
 				menuCarreras.setVisible(true);
 				menuReportes.setVisible(true);
@@ -148,18 +147,38 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				menuitemUVisualizar.setVisible(true);
 				menuitemCVisualizar.setVisible(true);
 				menuitemRVisualizar.setVisible(true);
-		}else
-			{
-					btnIniciararSesion.setVisible(true);
-					
-				}
+				
+		}else{
+			lblUsuario.setValue(" ");
+			lblNombre.setValue(" ");
+			menuUsuarios.setVisible(false);
+			menuCarreras.setVisible(false);
+			menuReportes.setVisible(false);
+			menuitemUIngresar.setVisible(false);
+			menuitemUEditar.setVisible(false);
+			menuitemUEliminar.setVisible(false);
+			menuitemUVisualizar.setVisible(false);
+			menuitemCVisualizar.setVisible(false);
+			menuitemRVisualizar.setVisible(false);
+			btnIniciararSesion.setVisible(true);
+			btnCerrarSesion.setVisible(false);
 			}
+		}
 		}
 	
 	
 	public void onClick$btnIniciararSesion()
 	{
 		execution.sendRedirect("login.zul");		
+	}
+	
+	public void onClick$btnCerrarSesion()
+	{
+		
+		Session session;
+		session=Sessions.getCurrent();
+		session.invalidate();
+		execution.sendRedirect("index.zul");
 	}
 
 }
