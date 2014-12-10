@@ -21,6 +21,14 @@ public class TipoUsuarioHome {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+
 	public void persist(TipoUsuario transientInstance) {
 		log.debug("persisting TipoUsuario instance");
 		try {

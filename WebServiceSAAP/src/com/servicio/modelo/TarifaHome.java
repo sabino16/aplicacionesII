@@ -21,6 +21,14 @@ public class TarifaHome {
 	@PersistenceContext
 	private EntityManager entityManager;
 
+	public EntityManager getEntityManager() {
+		return entityManager;
+	}
+
+	public void setEntityManager(EntityManager entityManager) {
+		this.entityManager = entityManager;
+	}
+
 	public void persist(Tarifa transientInstance) {
 		log.debug("persisting Tarifa instance");
 		try {
