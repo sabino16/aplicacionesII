@@ -1,6 +1,6 @@
-package com.servicios.modelo;
+package com.servicio.modelo;
 
-// Generated 03/12/2014 01:14:00 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 03:58:34 PM by Hibernate Tools 3.4.0.CR1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Home object for domain model class Carrera.
- * @see com.servicios.modelo.Carrera
+ * @see com.servicio.modelo.Carrera
  * @author Hibernate Tools
  */
 @Stateless

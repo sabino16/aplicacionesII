@@ -1,6 +1,6 @@
-package com.servicios.modelo;
+package com.servicio.modelo;
 
-// Generated 03/12/2014 01:14:00 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 03:58:33 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -23,12 +23,11 @@ import javax.persistence.TemporalType;
 public class Carrera implements java.io.Serializable {
 
 	private Integer idCarrera;
-	private Taxi taxi;
 	private Tarifa tarifa;
 	private Usuario usuario;
 	private String origen;
 	private String destino;
-	private Date tiempo;
+	private String tiempo;
 	private double velocidad;
 	private double precio;
 	private Date fecha;
@@ -37,10 +36,9 @@ public class Carrera implements java.io.Serializable {
 	public Carrera() {
 	}
 
-	public Carrera(Taxi taxi, Tarifa tarifa, Usuario usuario, String origen,
-			String destino, Date tiempo, double velocidad, double precio,
+	public Carrera(Tarifa tarifa, Usuario usuario, String origen,
+			String destino, String tiempo, double velocidad, double precio,
 			Date fecha, String estado) {
-		this.taxi = taxi;
 		this.tarifa = tarifa;
 		this.usuario = usuario;
 		this.origen = origen;
@@ -61,16 +59,6 @@ public class Carrera implements java.io.Serializable {
 
 	public void setIdCarrera(Integer idCarrera) {
 		this.idCarrera = idCarrera;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_taxi", nullable = false)
-	public Taxi getTaxi() {
-		return this.taxi;
-	}
-
-	public void setTaxi(Taxi taxi) {
-		this.taxi = taxi;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -111,13 +99,12 @@ public class Carrera implements java.io.Serializable {
 		this.destino = destino;
 	}
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "tiempo", nullable = false, length = 0)
-	public Date getTiempo() {
+	@Column(name = "tiempo", nullable = false, length = 45)
+	public String getTiempo() {
 		return this.tiempo;
 	}
 
-	public void setTiempo(Date tiempo) {
+	public void setTiempo(String tiempo) {
 		this.tiempo = tiempo;
 	}
 

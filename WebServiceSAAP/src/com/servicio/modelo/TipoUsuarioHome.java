@@ -1,6 +1,6 @@
-package com.servicios.modelo;
+package com.servicio.modelo;
 
-// Generated 03/12/2014 01:14:00 PM by Hibernate Tools 3.4.0.CR1
+// Generated 09/12/2014 03:58:34 PM by Hibernate Tools 3.4.0.CR1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -9,20 +9,20 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Home object for domain model class Usuario.
- * @see com.servicios.modelo.Usuario
+ * Home object for domain model class TipoUsuario.
+ * @see com.servicio.modelo.TipoUsuario
  * @author Hibernate Tools
  */
 @Stateless
-public class UsuarioHome {
+public class TipoUsuarioHome {
 
-	private static final Log log = LogFactory.getLog(UsuarioHome.class);
+	private static final Log log = LogFactory.getLog(TipoUsuarioHome.class);
 
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public void persist(Usuario transientInstance) {
-		log.debug("persisting Usuario instance");
+	public void persist(TipoUsuario transientInstance) {
+		log.debug("persisting TipoUsuario instance");
 		try {
 			entityManager.persist(transientInstance);
 			log.debug("persist successful");
@@ -32,8 +32,8 @@ public class UsuarioHome {
 		}
 	}
 
-	public void remove(Usuario persistentInstance) {
-		log.debug("removing Usuario instance");
+	public void remove(TipoUsuario persistentInstance) {
+		log.debug("removing TipoUsuario instance");
 		try {
 			entityManager.remove(persistentInstance);
 			log.debug("remove successful");
@@ -43,10 +43,10 @@ public class UsuarioHome {
 		}
 	}
 
-	public Usuario merge(Usuario detachedInstance) {
-		log.debug("merging Usuario instance");
+	public TipoUsuario merge(TipoUsuario detachedInstance) {
+		log.debug("merging TipoUsuario instance");
 		try {
-			Usuario result = entityManager.merge(detachedInstance);
+			TipoUsuario result = entityManager.merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -55,10 +55,10 @@ public class UsuarioHome {
 		}
 	}
 
-	public Usuario findById(Integer id) {
-		log.debug("getting Usuario instance with id: " + id);
+	public TipoUsuario findById(Integer id) {
+		log.debug("getting TipoUsuario instance with id: " + id);
 		try {
-			Usuario instance = entityManager.find(Usuario.class, id);
+			TipoUsuario instance = entityManager.find(TipoUsuario.class, id);
 			log.debug("get successful");
 			return instance;
 		} catch (RuntimeException re) {
