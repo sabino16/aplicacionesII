@@ -74,4 +74,23 @@ public class CarreraHome {
 			throw re;
 		}
 	}
+	
+	
+	
+	public Carrera consultarcarrera(int idCarrera){
+		try{
+		Carrera carrera;
+		String sql = "select * from usuario as u, carrera as c, tarifa as t"+ 
+			      "where c.id_usuario=u.id_usuario and"+
+			      "c.id_tarifa=t.id_tarifa"+  
+			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
+			      "u.apellido= :apellidos";
+		
+		carrera = (Carrera) entityManager.createQuery(sql).setParameter("idCarrera",idCarrera).getResultList();
+		return carrera;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
+			return null;
+		}
+	}
 }

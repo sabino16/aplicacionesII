@@ -2,6 +2,8 @@ package com.servicio.modelo;
 
 // Generated 09/12/2014 03:58:34 PM by Hibernate Tools 3.4.0.CR1
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -74,4 +76,26 @@ public class UsuarioHome {
 			throw re;
 		}
 	}
+	
+	
+	
+	public Usuario consultarusuario(int idUsuario){
+		try{
+		Usuario usuario;
+		String sql = "select * from usuario as u, carrera as c, tarifa as t"+ 
+			      "where c.id_usuario=u.id_usuario and"+
+			      "c.id_tarifa=t.id_tarifa"+  
+			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
+			      "u.apellido= :apellidos";
+		
+		usuario = (Usuario) entityManager.createQuery(sql).setParameter("idUsuario",idUsuario).getResultList();
+		return usuario;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
+			return null;
+		}
+	}
+	
+	
+	
 }
