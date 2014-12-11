@@ -23,12 +23,6 @@ apply="com.aplicaciones.controlador.ListaCarreraControlador">
 			<auxheader colspan="1" rowspan="1">
 			    <textbox id="textbox_Apellidos" ></textbox>
 			</auxheader>
-			<auxheader colspan="1" rowspan="1">
-				<label value="Placa del taxi "></label>
-			</auxheader>
-			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_Placa" ></textbox>
-			</auxheader>
 		</auxhead>
 			
 
@@ -39,8 +33,6 @@ apply="com.aplicaciones.controlador.ListaCarreraControlador">
 		
 		
 		<listhead sizable="true" menupopup="auto">
-			<listheader label="Placa Taxi" sort="auto(taxi.placa)" width="9%" />
-			<listheader label="Cooperativa" sort="auto(taxi.cooperativa)" width="10%"/>
 			<listheader label="Nombres" sort="auto(usuario.nombre)" width="8%"/>
 			<listheader label="Apellidos" sort="auto(usuario.apellidos)" width="8.3%"/>
 			<listheader label="Tipo de Usuario" sort="auto(usuario.tipoUsuario.descripcion)" width="11%"/>
@@ -54,8 +46,6 @@ apply="com.aplicaciones.controlador.ListaCarreraControlador">
 		</listhead>
 		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
 			<listitem>
-				<listcell label="${each.taxi.placa} " />
-				<listcell label="${each.taxi.cooperativa} " />
 				<listcell label="${each.usuario.nombre} " />
 				<listcell label="${each.usuario.apellidos} " />
 				<listcell label="${each.usuario.tipoUsuario.descripcion} " />

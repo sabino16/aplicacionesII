@@ -28,7 +28,7 @@ public class ListaCarreraControlador extends GenericForwardComposer<Component> {
 	CarreraHome ch;
 	
 	@Wire
-	Textbox textbox_Nombre, textbox_Apellidos, textbox_Placa;
+	Textbox textbox_Nombre, textbox_Apellidos;
 	Listbox listaCarreras;
 	
 	@Override
@@ -75,9 +75,8 @@ public class ListaCarreraControlador extends GenericForwardComposer<Component> {
 		
 		String nombres = textbox_Nombre.getValue();
 		String apellidos = textbox_Apellidos.getValue();
-		String placa = textbox_Placa.getValue();
-		
-		List<Carrera> lista = (List<Carrera>) ch.filtrarCompleto(nombres, apellidos, placa);
+				
+		List<Carrera> lista = (List<Carrera>) ch.filtrarCompleto(nombres, apellidos);
 			
 		if(lista!=null){	//TRABAJAR CON LA LISTA DE LA VISTA
 			ListModelList<Carrera> listModel= new ListModelList<Carrera>(lista);
@@ -127,59 +126,29 @@ public class ListaCarreraControlador extends GenericForwardComposer<Component> {
 		gh.closeEntityManager(em);
 		}
 	
-	public void filtrarPlaca(){
-		em = gh.initEntityManager();
-		ch.setEntityManager(em);
-		em.getTransaction().begin();
-
-		String placa = textbox_Placa.getValue();
 		
-		List<Carrera> lista = (List<Carrera>) ch.filtrarPlaca(placa);
-			
-		if(lista!=null){	//TRABAJAR CON LA LISTA DE LA VISTA
-			ListModelList<Carrera> listModel= new ListModelList<Carrera>(lista);
-			listaCarreras.setModel(listModel);
-			//REFRESCAR LISTA
-			listaCarreras.renderAll();
-		}
-		em.getTransaction().commit();
-		gh.closeEntityManager(em);
-		}
-	
 	public void onChange$textbox_Nombre(){
-		if(textbox_Apellidos.getValue().equals("") && textbox_Placa.getValue().equals("")){
+		if(textbox_Apellidos.getValue().equals("") ){
 			filtrarNombre();
 		}else{
 			alert("Seleccione mas parametros de busqueda");
 		}
-		if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+		if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("")){
 			cargarListaCarreras();
 		}
 	}
 
 public void onChange$textbox_Apellidos(){
-	if(textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+	if(textbox_Nombre.getValue().equals("")){
 		filtrarApellido();
 	}else{
 		alert("Seleccione mas parametros de busqueda");
 	}
-	if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
+	if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("")){
 		cargarListaCarreras();
 	}
 }
 
-public void onChange$textbox_Placa(){
-	if(textbox_Nombre.getValue().equals("") && textbox_Apellidos.getValue().equals("")){
-		filtrarPlaca();
-	}else{
-		alert("Seleccione mas parametros de busqueda");
-	}
-	if(textbox_Apellidos.getValue().equals("") && textbox_Nombre.getValue().equals("") && textbox_Placa.getValue().equals("")){
-		cargarListaCarreras();
-	}
-}
 
-	
-	
 
 }

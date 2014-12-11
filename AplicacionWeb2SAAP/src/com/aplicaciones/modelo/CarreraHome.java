@@ -93,8 +93,7 @@ public class CarreraHome {
 	
 	
 	
-	public List<Carrera> filtrarCompleto(String nombres, String apellidos, 
-			String placa){
+	public List<Carrera> filtrarCompleto(String nombres, String apellidos){
 		try{
 		List<Carrera> lista;
 		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
@@ -105,8 +104,7 @@ public class CarreraHome {
       "u.nombre= :nombres and u.apellidos= :apellidos and tax.placa= :placa";  
 	
 		lista = entityManager.createQuery(sql).setParameter("nombres", "%"+nombres+"%")
-											.setParameter("apellidos", "%"+apellidos+"%")
-											.setParameter("placa", "%"+placa+"%").getResultList();
+											.setParameter("apellidos", "%"+apellidos+"%").getResultList();
 		return lista;
 		}catch(RuntimeException re){
 			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
@@ -150,24 +148,6 @@ public class CarreraHome {
 		}
 	}
 	
-	public List<Carrera> filtrarPlaca(String placa){
-		try{
-		List<Carrera> lista;
-		String sql = "select * from usuario as u, taxi as tax, carrera as c, tarifa as t"+ 
-			      "where c.id_usuario=u.id_usuario and"+ 
-			      "c.id_taxi=tax.id_taxi and"+
-			      "c.id_tarifa=t.id_tarifa"+  
-			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
-			      "tax.placa= :placa";
 		
-		lista = entityManager.createQuery(sql).setParameter("placa", "%"+placa+"%")
-											.getResultList();
-		return lista;
-		}catch(RuntimeException re){
-			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
-			return null;
-		}
-	}
-	
 	
 }
