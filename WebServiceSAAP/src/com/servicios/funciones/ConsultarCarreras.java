@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import com.servicio.modelo.Carrera;
 import com.servicio.modelo.CarreraHome;
 import com.servicio.modelo.GeneralHome;
+import com.servicio.modelo.TipoUsuarioHome;
 import com.servicio.modelo.Usuario;
 import com.servicio.modelo.UsuarioHome;
 
@@ -27,7 +28,7 @@ public class ConsultarCarreras {
 		
 		
 		
-		Usuario usuario = uh.consultarusuario(idUsuario);
+		Usuario usuario = uh.findById(idUsuario);
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		String datos =  gson.toJson(usuario);
@@ -51,7 +52,7 @@ public class ConsultarCarreras {
 		
 		
 		
-		Carrera carrera = ch.consultarcarrera(idCarrera);
+		Carrera carrera = ch.findById(idCarrera);
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		String datos =  gson.toJson(carrera);
@@ -69,6 +70,18 @@ public class ConsultarCarreras {
 	
 	public String consultarhistorial(int idUsuario){
 		//retorna lista de carreras en format json
+		
+		gh = new GeneralHome();
+		em = gh.initEntityManager();
+		CarreraHome ch = new CarreraHome();
+		ch.setEntityManager(em);   	
+		UsuarioHome uh = new UsuarioHome();
+		uh.setEntityManager(em);  
+		TipoUsuarioHome th = new TipoUsuarioHome();
+		th.setEntityManager(em);  
+		em.getTransaction().begin();
+		
+		
 		
 		return "";
 		
