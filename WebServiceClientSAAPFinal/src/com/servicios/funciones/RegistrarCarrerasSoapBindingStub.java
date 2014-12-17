@@ -37,8 +37,6 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://funciones.servicios.com", "contrasena"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://funciones.servicios.com", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
         oper.setReturnQName(new javax.xml.namespace.QName("http://funciones.servicios.com", "registrarusuarioReturn"));
@@ -67,8 +65,6 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://funciones.servicios.com", "precio"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "double"), double.class, false, false);
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://funciones.servicios.com", "fecha"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://funciones.servicios.com", "estado"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         oper.setReturnClass(java.lang.String.class);
@@ -130,7 +126,7 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
         }
     }
 
-    public java.lang.String registrarusuario(java.lang.String nombres, java.lang.String apellidos, java.lang.String correo, java.lang.String cedula, java.lang.String user, java.lang.String contrasena, java.lang.String estado) throws java.rmi.RemoteException {
+    public java.lang.String registrarusuario(java.lang.String nombres, java.lang.String apellidos, java.lang.String correo, java.lang.String cedula, java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -146,7 +142,7 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {nombres, apellidos, correo, cedula, user, contrasena, estado});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {nombres, apellidos, correo, cedula, user, contrasena});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -164,7 +160,7 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
 }
     }
 
-    public java.lang.String registrar(int id_tarifa, int id_pasajero, java.lang.String user, java.lang.String contrasena, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double velocidad, double precio, java.lang.String fecha, java.lang.String estado) throws java.rmi.RemoteException {
+    public java.lang.String registrar(int id_tarifa, int id_pasajero, java.lang.String user, java.lang.String contrasena, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double velocidad, double precio, java.lang.String fecha) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -180,7 +176,7 @@ public class RegistrarCarrerasSoapBindingStub extends org.apache.axis.client.Stu
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id_tarifa), new java.lang.Integer(id_pasajero), user, contrasena, origen, destino, tiempo, new java.lang.Double(velocidad), new java.lang.Double(precio), fecha, estado});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {new java.lang.Integer(id_tarifa), new java.lang.Integer(id_pasajero), user, contrasena, origen, destino, tiempo, new java.lang.Double(velocidad), new java.lang.Double(precio), fecha});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

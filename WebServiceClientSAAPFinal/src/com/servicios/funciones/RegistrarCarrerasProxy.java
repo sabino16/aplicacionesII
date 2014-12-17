@@ -44,16 +44,16 @@ public class RegistrarCarrerasProxy implements com.servicios.funciones.Registrar
     return registrarCarreras;
   }
   
-  public java.lang.String registrarusuario(java.lang.String nombres, java.lang.String apellidos, java.lang.String correo, java.lang.String cedula, java.lang.String user, java.lang.String contrasena, java.lang.String estado) throws java.rmi.RemoteException{
+  public java.lang.String registrarusuario(java.lang.String nombres, java.lang.String apellidos, java.lang.String correo, java.lang.String cedula, java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
     if (registrarCarreras == null)
       _initRegistrarCarrerasProxy();
-    return registrarCarreras.registrarusuario(nombres, apellidos, correo, cedula, user, contrasena, estado);
+    return registrarCarreras.registrarusuario(nombres, apellidos, correo, cedula, user, contrasena);
   }
   
-  public java.lang.String registrar(int id_tarifa, int id_pasajero, java.lang.String user, java.lang.String contrasena, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double velocidad, double precio, java.lang.String fecha, java.lang.String estado) throws java.rmi.RemoteException{
+  public java.lang.String registrar(int id_tarifa, int id_pasajero, java.lang.String user, java.lang.String contrasena, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double velocidad, double precio, java.lang.String fecha) throws java.rmi.RemoteException{
     if (registrarCarreras == null)
       _initRegistrarCarrerasProxy();
-    return registrarCarreras.registrar(id_tarifa, id_pasajero, user, contrasena, origen, destino, tiempo, velocidad, precio, fecha, estado);
+    return registrarCarreras.registrar(id_tarifa, id_pasajero, user, contrasena, origen, destino, tiempo, velocidad, precio, fecha);
   }
   
   

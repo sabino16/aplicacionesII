@@ -11,8 +11,6 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
-import org.zkoss.zul.Combobox;
-import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
 
 import com.servicios.funciones.RegistrarCarrerasServiceLocator;
@@ -28,6 +26,14 @@ public class RegistrarPasajeroControlador extends GenericForwardComposer<Compone
 		Textbox textbox_nombre,textbox_apellido,textbox_correo,textbox_cedula,textbox_usuario,textbox_password;
 		Button btnGuardar,btnCancelar;
 		
+		
+		
+		@Override
+		public void doAfterCompose(Component comp) throws Exception {
+			// TODO Auto-generated method stub
+			super.doAfterCompose(comp);
+		}
+
 		public void RegistrarPasajero(){
 			String RespuestaRegistro;	
 			try {
@@ -39,10 +45,9 @@ public class RegistrarPasajeroControlador extends GenericForwardComposer<Compone
 				String correo = textbox_correo.getValue();
 				String cedula = textbox_cedula.getValue();
 				String user = textbox_usuario.getValue();
-				String contrasena = textbox_password.getValue();
-				String estado = "1";
+			String contrasena = textbox_password.getValue();
 				
-				RespuestaRegistro = pbinding.registrarusuario(nombres, apellidos, correo, cedula, user, contrasena, estado);
+				RespuestaRegistro = pbinding.registrarusuario(nombres, apellidos, correo, cedula, user, contrasena);
 				
 				alert("" + RespuestaRegistro);
 				

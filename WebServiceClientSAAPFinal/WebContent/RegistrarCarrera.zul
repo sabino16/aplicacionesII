@@ -1,14 +1,14 @@
 <?page title="REGISTRO DE CARRERA" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="REGISTRO DE CARRERA" border="normal">
+<window title="REGISTRO DE CARRERA" border="normal" apply="com.servicios.controladoes.RegistrarCarreraControlador">
 <grid width="80%">
 <rows >
 	<row>
 		<label value="Tarifa:" />
 		<combobox id="cbbTarifa"  autodrop="true" width="100%">
 	
-				<comboitem label="Diurna" value=1 />
-				<comboitem label="Nocturna" value=2 />
+				<comboitem label="Diurna" value="1" />
+				<comboitem label="Nocturna" value="2" />
 		</combobox >
 	</row>
 	<row>
@@ -29,7 +29,7 @@
 	</row>
 	<row>
 		<label value="Velocidad:" />
-		<textbox id="textbox_velocidad" constraint="no empty" />
+		<doublebox id="textbox_velocidad" constraint="no empty" />
 	</row>
 	<row>
 		<label value="Precio:" />
@@ -48,8 +48,8 @@
 		<textbox id="textbox_contrasena" constraint="no empty" />
 	</row>
 	<row>
-		<button label="GUARDAR" onClick="" />
-		<button label="CANCELAR" onClick="" />
+		<button label="GUARDAR" onClick="" id="btnGuardar"/>
+		<button label="CANCELAR" onClick="" id="btnCancelar"/>
 	</row>
 </rows>
 </grid>
