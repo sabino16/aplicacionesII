@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RegistrarCarrerasService WSDL service -->
+
+  <service name="RegistrarCarreras" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://funciones.servicios.com"/>
+      <parameter name="wsdlServiceElement" value="RegistrarCarrerasService"/>
+      <parameter name="schemaQualified" value="http://funciones.servicios.com"/>
+      <parameter name="wsdlServicePort" value="RegistrarCarreras"/>
+      <parameter name="className" value="com.servicios.funciones.RegistrarCarrerasSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="RegistrarCarreras"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="registrarusuario" qname="operNS:registrarusuario" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:registrarusuarioReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nombres" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:apellidos" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:correo" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:cedula" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:user" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:contrasena" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:estado" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="registrar" qname="operNS:registrar" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:registrarReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id_tarifa" xmlns:pns="http://funciones.servicios.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:id_pasajero" xmlns:pns="http://funciones.servicios.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:user" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:contrasena" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:origen" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:destino" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:tiempo" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:velocidad" xmlns:pns="http://funciones.servicios.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:precio" xmlns:pns="http://funciones.servicios.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:fecha" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:estado" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="registrarusuario registrar"/>
+
+  </service>
+</deployment>

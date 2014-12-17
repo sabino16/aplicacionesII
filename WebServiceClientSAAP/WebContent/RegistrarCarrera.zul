@@ -4,14 +4,6 @@
 <grid width="80%">
 <rows >
 	<row>
-		<label value="Taxi:" />
-		<combobox id="cbbTaxi"  autodrop="true" width="100%">
-			<template name="model">
-				<comboitem label="${each.placa}" value="${each.id_taxi}" />
-			</template>
-		</combobox >
-	</row>
-	<row>
 		<label value="Tarifa:" />
 		<combobox id="cbbTarifa"  autodrop="true" width="100%">
 			<template name="model">
@@ -46,6 +38,14 @@
 	<row>
 		<label value="Fecha:" />
 		<datebox id="datebox_Inicio"/>
+	</row>
+	<row>
+		<label value="Usuario:" />
+		<textbox id="textbox_usuario" constraint="no empty" />
+	</row>
+	<row>
+		<label value="Contraseña:" />
+		<textbox id="textbox_contrasena" constraint="no empty" />
 	</row>
 	<row>
 		<button label="GUARDAR" onClick="" />

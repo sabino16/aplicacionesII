@@ -23,7 +23,7 @@ import com.servicio.modelo.UsuarioHome;
 public class RegistrarCarreras {
 	GeneralHome gh;
 	EntityManager em;
-	public boolean registrar(int id_tarifa, int id_pasajero,
+	public String registrar(int id_tarifa, int id_pasajero, String user, String contrasena, 
 			String origen, String destino, String tiempo, double velocidad, double precio,
 			String fecha, String estado)
 	{
@@ -48,19 +48,27 @@ public class RegistrarCarreras {
 		      System.out.println(date);
 		
 		Carrera  carrera = new Carrera(tarifa, usuario, origen, destino, tiempo,velocidad, precio, date, estado);
-		ch.persist(carrera);
+		if(usuario.getUser().equals(user)==true && usuario.getPass().equals(contrasena) ){
+			ch.persist(carrera);
+			em.getTransaction().commit();
+			gh.closeEntityManager(em);
+			return "Carrera registrada";
+		}
+		else{
+			
+		}
 		em.getTransaction().commit();
 		gh.closeEntityManager(em);
-		return true;
+		return "Error de Autenticación";
 	    }
 	    catch (ParseException e)
 	    {
 	      e.printStackTrace();
-	      return false;
+	      return "Error";
 	    }
 	}
 	
-	public boolean registrarusuario(String nombres, String apellidos, String correo, 
+	public String registrarusuario(String nombres, String apellidos, String correo, 
 			String cedula, String user, String contrasena, String estado)
 	{
 		
@@ -80,25 +88,24 @@ public class RegistrarCarreras {
 			uh.persist(usuario);
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
-			return true;
+			return "Usuario Registrado";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return false;
+			return "Error";
 		}
 		
 	}
 	
-	public static void main(String [ ] args)
+	/*public static void main(String [ ] args)
 	{
 	      RegistrarCarreras rc = new RegistrarCarreras();
-	      boolean a,b;
+	      String a;
+	      String b;
 	      a = rc.registrarusuario("prueba2", "prueba", "prueba", "prueba",
-	    		  "prueba", "prueba", "1");
-	      b = rc.registrar(1, 4, "salinas", "la libertad", "10min", 40, 1.25, "12/10/2014", "1");
-	      System.out.println(" "+ a +"   "+b);
-	      
-	      
-	}
+	    		  "usuario1", "contraseña1", "1");
+	      b = rc.registrar(1,7,"usuario1","contraseña1", "salinas", "la libertad", "15min", 43, 2.25, "17/12/2014", "1");
+	      System.out.println("   "+b);
+	}*/
 	
 }
