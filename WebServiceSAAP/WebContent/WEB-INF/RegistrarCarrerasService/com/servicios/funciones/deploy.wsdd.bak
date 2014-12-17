@@ -27,7 +27,6 @@
         <parameter qname="pns:cedula" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:user" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:contrasena" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:estado" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="registrar" qname="operNS:registrar" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:registrarReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:id_tarifa" xmlns:pns="http://funciones.servicios.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
@@ -40,7 +39,6 @@
         <parameter qname="pns:velocidad" xmlns:pns="http://funciones.servicios.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:precio" xmlns:pns="http://funciones.servicios.com" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:fecha" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:estado" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="registrarusuario registrar"/>
 

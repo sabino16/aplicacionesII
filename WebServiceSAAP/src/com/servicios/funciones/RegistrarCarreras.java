@@ -48,18 +48,17 @@ public class RegistrarCarreras {
 		      System.out.println(date);
 		
 		Carrera  carrera = new Carrera(tarifa, usuario, origen, destino, tiempo,velocidad, precio, date, "1");
-		if(usuario.getUser().equals(user)==true && usuario.getPass().equals(contrasena) ){
+		if(usuario.getUser().equals(user)==true && usuario.getPass().equals(contrasena)==true ){
 			ch.persist(carrera);
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
 			return "Carrera registrada";
 		}
 		else{
-			
+			em.getTransaction().commit();
+			gh.closeEntityManager(em);
+			return "Error de Autenticación";
 		}
-		em.getTransaction().commit();
-		gh.closeEntityManager(em);
-		return "Error de Autenticación";
 	    }
 	    catch (ParseException e)
 	    {

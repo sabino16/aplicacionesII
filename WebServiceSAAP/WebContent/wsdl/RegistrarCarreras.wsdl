@@ -13,7 +13,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="cedula" type="xsd:string"/>
       <element name="user" type="xsd:string"/>
       <element name="contrasena" type="xsd:string"/>
-      <element name="estado" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -37,7 +36,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="velocidad" type="xsd:double"/>
       <element name="precio" type="xsd:double"/>
       <element name="fecha" type="xsd:string"/>
-      <element name="estado" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
