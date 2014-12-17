@@ -25,7 +25,7 @@ public class RegistrarCarreras {
 	EntityManager em;
 	public String registrar(int id_tarifa, int id_pasajero, String user, String contrasena, 
 			String origen, String destino, String tiempo, double velocidad, double precio,
-			String fecha, String estado)
+			String fecha)
 	{
 		try
 	    {
@@ -47,7 +47,7 @@ public class RegistrarCarreras {
 		      date = formatter.parse(fecha);
 		      System.out.println(date);
 		
-		Carrera  carrera = new Carrera(tarifa, usuario, origen, destino, tiempo,velocidad, precio, date, estado);
+		Carrera  carrera = new Carrera(tarifa, usuario, origen, destino, tiempo,velocidad, precio, date, "1");
 		if(usuario.getUser().equals(user)==true && usuario.getPass().equals(contrasena) ){
 			ch.persist(carrera);
 			em.getTransaction().commit();
@@ -69,7 +69,7 @@ public class RegistrarCarreras {
 	}
 	
 	public String registrarusuario(String nombres, String apellidos, String correo, 
-			String cedula, String user, String contrasena, String estado)
+			String cedula, String user, String contrasena)
 	{
 		
 		
@@ -83,7 +83,7 @@ public class RegistrarCarreras {
 			em.getTransaction().begin();
 			TipoUsuario tipo_usuario = tuh.findById(1);
 			Usuario  usuario = new Usuario(tipo_usuario, user, contrasena, nombres, apellidos,
-					correo, cedula, estado);
+					correo, cedula, "1");
 			
 			uh.persist(usuario);
 			em.getTransaction().commit();
