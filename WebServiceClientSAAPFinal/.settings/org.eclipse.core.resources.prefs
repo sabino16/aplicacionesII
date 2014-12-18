@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/com/servicios/funciones/ConsultarCarreras.java=UTF-8
+encoding//src/com/servicios/funciones/ConsultarCarrerasService.java=UTF-8
+encoding//src/com/servicios/funciones/ConsultarCarrerasServiceLocator.java=UTF-8
+encoding//src/com/servicios/funciones/ConsultarCarrerasSoapBindingStub.java=UTF-8
 encoding//src/com/servicios/funciones/RegistrarCarreras.java=UTF-8
 encoding//src/com/servicios/funciones/RegistrarCarrerasService.java=UTF-8
 encoding//src/com/servicios/funciones/RegistrarCarrerasServiceLocator.java=UTF-8
