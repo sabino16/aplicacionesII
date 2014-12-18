@@ -25,6 +25,13 @@ public class TipoUsuario implements java.io.Serializable {
 	private String estado;
 	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
 
+	@Override
+	public String toString() {
+		return "{idTipousuario:" + idTipousuario + ", descripcion:"
+				+ descripcion + ", estado:" + estado + ", usuarios:" + usuarios
+				+ "}";
+	}
+
 	public TipoUsuario() {
 	}
 

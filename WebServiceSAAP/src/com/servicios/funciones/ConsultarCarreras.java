@@ -38,13 +38,18 @@ public class ConsultarCarreras {
 		/*GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		String datos =  gson.toJson(usuario);*/
-		String datos = "{ 'number': "+ usuario.getIdUsuario() +",  'string': '" + TUsuario.getDescripcion() +"',  'String': '"+ usuario.getNombre()+"' ,  'string': '" + usuario.getApellido() +"',  'String': '"+ usuario.getCorreo()+"'}";
+		String datos = "{ 'idUsuario': "+ usuario.getIdUsuario() 
+				+",  'descripcion': '" + TUsuario.getDescripcion() 
+				+"',  'nombre': '"+ usuario.getNombre()
+				+"',  'apellido': '" + usuario.getApellido() 
+				+"',  'correo': '"+ usuario.getCorreo()+"'}";
 		
 		
 		
 	    em.getTransaction().commit();
 		gh.closeEntityManager(em);
-		return datos;  
+		return datos;
+		//return usuario.toString();
 	}
 	
 	
@@ -69,7 +74,15 @@ public class ConsultarCarreras {
 		/*GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		String datos =  gson.toJson(carrera);*/
-		String datos = "{ 'number': "+ carrera.getIdCarrera() +",  'String': '"+ usuario.getNombre()+"' ,  'string': '" + usuario.getApellido() +"',  'string': '" + tarifa.getTipoTarifa() +"',  'String': '"+ carrera.getOrigen()+"',  'String': '"+ carrera.getDestino()+"',  'String': '"+ carrera.getPrecio()+"',  'String': '"+ carrera.getTiempo()+"',  'String': '"+ carrera.getVelocidad()+"'}";
+		String datos = "{ 'idCarrera': "+ carrera.getIdCarrera() 
+				+",  'nombre': '"+ usuario.getNombre()
+				+"', 'apellido': '" + usuario.getApellido() 
+				+"', 'tipoTarifa': '" + tarifa.getTipoTarifa() 
+				+"', 'origen': '"+ carrera.getOrigen()
+				+"', 'destino': '"+ carrera.getDestino()
+				+"',  'precio': '"+ carrera.getPrecio()
+				+"',  'tiempo': '"+ carrera.getTiempo()
+				+"',  'velocidad': '"+ carrera.getVelocidad()+"'}";
 		
 		
 		em.getTransaction().commit();
@@ -100,7 +113,7 @@ public class ConsultarCarreras {
 		
 		}
 
-	/*
+	
 	public static void main(String [ ] args)
 	{
 	      ConsultarCarreras rc = new ConsultarCarreras();
@@ -109,6 +122,6 @@ public class ConsultarCarreras {
 	      b = rc.consultardatoscarrera(1);
 	      System.out.println(a);
 	      System.out.println(b);
-	}*/
+	}
 	
 }
