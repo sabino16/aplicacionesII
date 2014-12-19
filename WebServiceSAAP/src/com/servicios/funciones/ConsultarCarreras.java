@@ -35,21 +35,13 @@ public class ConsultarCarreras {
 		
 		Usuario usuario = uh.findById(idUsuario);
 		TipoUsuario TUsuario = th.findById(usuario.getTipoUsuario().getIdTipousuario());
-		/*GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();
-		String datos =  gson.toJson(usuario);*/
-		String datos = "{ 'idUsuario': "+ usuario.getIdUsuario() 
-				+",  'descripcion': '" + TUsuario.getDescripcion() 
-				+"',  'nombre': '"+ usuario.getNombre()
-				+"',  'apellido': '" + usuario.getApellido() 
-				+"',  'correo': '"+ usuario.getCorreo()+"'}";
 		
 		
 		
 	    em.getTransaction().commit();
 		gh.closeEntityManager(em);
-		return datos;
-		//return usuario.toString();
+		//return datos;
+		return usuario.toString();
 	}
 	
 	
@@ -71,30 +63,15 @@ public class ConsultarCarreras {
 		Carrera carrera = ch.findById(idCarrera);
 		Usuario usuario = uh.findById(carrera.getUsuario().getIdUsuario());
 		Tarifa tarifa = tah.findById(carrera.getTarifa().getIdTarifa());
-		/*GsonBuilder builder = new GsonBuilder();
-		Gson gson = builder.create();
-		String datos =  gson.toJson(carrera);*/
-		String datos = "{ 'idCarrera': "+ carrera.getIdCarrera() 
-				+",  'nombre': '"+ usuario.getNombre()
-				+"', 'apellido': '" + usuario.getApellido() 
-				+"', 'tipoTarifa': '" + tarifa.getTipoTarifa() 
-				+"', 'origen': '"+ carrera.getOrigen()
-				+"', 'destino': '"+ carrera.getDestino()
-				+"',  'precio': '"+ carrera.getPrecio()
-				+"',  'tiempo': '"+ carrera.getTiempo()
-				+"',  'velocidad': '"+ carrera.getVelocidad()+"'}";
-		
+			
 		
 		em.getTransaction().commit();
 		gh.closeEntityManager(em);
-		return datos;  
+		return carrera.toString();  
 		}
 	
-	
-	
-
-	
-	public String consultarhistorial(int idUsuario){
+		
+		public String listahistorial(){
 		//retorna lista de carreras en format json
 		
 		gh = new GeneralHome();
@@ -112,6 +89,26 @@ public class ConsultarCarreras {
 		return "";
 		
 		}
+		
+		public String consultarhistorial(int idUsuario){
+			//retorna lista de carreras en format json
+			
+			gh = new GeneralHome();
+			em = gh.initEntityManager();
+			CarreraHome ch = new CarreraHome();
+			ch.setEntityManager(em);   	
+			UsuarioHome uh = new UsuarioHome();
+			uh.setEntityManager(em);  
+			TipoUsuarioHome th = new TipoUsuarioHome();
+			th.setEntityManager(em);  
+			em.getTransaction().begin();
+			
+			
+			
+			return "";
+			
+			}
+
 
 	
 	public static void main(String [ ] args)

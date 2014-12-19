@@ -25,6 +25,16 @@ public class Tarifa implements java.io.Serializable {
 	private double valor;
 	private String estado;
 	private Set<Carrera> carreras = new HashSet<Carrera>(0);
+	
+	
+	
+	
+
+	@Override
+	public String toString() {
+		return "{'idTarifa':" + idTarifa + ", 'tipoTarifa':'" + tipoTarifa
+				+ "', 'valor':'" + valor + "'}";
+	}
 
 	public Tarifa() {
 	}

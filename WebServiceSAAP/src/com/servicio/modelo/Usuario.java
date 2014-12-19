@@ -158,11 +158,15 @@ public class Usuario implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "{idUsuario:" + idUsuario + ", tipoUsuario:"
-				+ tipoUsuario.toString() + ", user:" + user + ", pass:" + pass
-				+ ", nombre=" + nombre + ", apellido=" + apellido + ", correo:"
-				+ correo + ", cedula:" + cedula + ", estado:" + estado
-				+ ", carreras:" + carreras + "}";
+		return "{'idUsuario':" + idUsuario + ", 'tipoUsuario':"
+				+ tipoUsuario.toString() + ", 'user':'" + user 
+				+ "', 'nombre':'" + nombre + "', 'apellido':'" + apellido + "', 'correo':'"
+				+ correo 
+				 + "'}";
+	}
+	
+	public String toString2() {
+		return "{'idUsuario':" + idUsuario + ",'nombre':'" + nombre + "', 'apellido':'" + apellido + "'}";
 	}
 	
 	

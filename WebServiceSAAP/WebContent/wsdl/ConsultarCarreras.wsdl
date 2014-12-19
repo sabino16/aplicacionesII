@@ -4,20 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://funciones.servicios.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="consultardatosusuario">
-    <complexType>
-     <sequence>
-      <element name="idUsuario" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="consultardatosusuarioResponse">
-    <complexType>
-     <sequence>
-      <element name="consultardatosusuarioReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="consultardatoscarrera">
     <complexType>
      <sequence>
@@ -32,8 +18,62 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="listahistorial">
+    <complexType/>
+   </element>
+   <element name="listahistorialResponse">
+    <complexType>
+     <sequence>
+      <element name="listahistorialReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultardatosusuario">
+    <complexType>
+     <sequence>
+      <element name="idUsuario" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultardatosusuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="consultardatosusuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarhistorial">
+    <complexType>
+     <sequence>
+      <element name="idUsuario" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarhistorialResponse">
+    <complexType>
+     <sequence>
+      <element name="consultarhistorialReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
+
+   <wsdl:message name="listahistorialResponse">
+
+      <wsdl:part element="impl:listahistorialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="listahistorialRequest">
+
+      <wsdl:part element="impl:listahistorial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
 
    <wsdl:message name="consultardatoscarreraResponse">
 
@@ -59,6 +99,22 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="consultarhistorialRequest">
+
+      <wsdl:part element="impl:consultarhistorial" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarhistorialResponse">
+
+      <wsdl:part element="impl:consultarhistorialResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="consultardatoscarreraRequest">
 
       <wsdl:part element="impl:consultardatoscarrera" name="parameters">
@@ -68,18 +124,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </wsdl:message>
 
    <wsdl:portType name="ConsultarCarreras">
-
-      <wsdl:operation name="consultardatosusuario">
-
-         <wsdl:input message="impl:consultardatosusuarioRequest" name="consultardatosusuarioRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:consultardatosusuarioResponse" name="consultardatosusuarioResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="consultardatoscarrera">
 
@@ -93,11 +137,83 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="listahistorial">
+
+         <wsdl:input message="impl:listahistorialRequest" name="listahistorialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:listahistorialResponse" name="listahistorialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultardatosusuario">
+
+         <wsdl:input message="impl:consultardatosusuarioRequest" name="consultardatosusuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultardatosusuarioResponse" name="consultardatosusuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarhistorial">
+
+         <wsdl:input message="impl:consultarhistorialRequest" name="consultarhistorialRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultarhistorialResponse" name="consultarhistorialResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="ConsultarCarrerasSoapBinding" type="impl:ConsultarCarreras">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="consultardatoscarrera">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultardatoscarreraRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultardatoscarreraResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="listahistorial">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="listahistorialRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="listahistorialResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
 
       <wsdl:operation name="consultardatosusuario">
 
@@ -117,17 +233,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="consultardatoscarrera">
+      <wsdl:operation name="consultarhistorial">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="consultardatoscarreraRequest">
+         <wsdl:input name="consultarhistorialRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="consultardatoscarreraResponse">
+         <wsdl:output name="consultarhistorialResponse">
 
             <wsdlsoap:body use="literal"/>
 

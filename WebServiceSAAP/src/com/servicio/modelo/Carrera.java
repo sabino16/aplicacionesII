@@ -32,6 +32,27 @@ public class Carrera implements java.io.Serializable {
 	private double precio;
 	private Date fecha;
 	private String estado;
+	
+	
+
+	public String toString() {
+		return "{'idCarrera':" + idCarrera + ", 'tarifa':" + tarifa.toString()
+				+ ", 'usuario':" + usuario.toString2() + ", 'origen':'" + origen + "', 'destino':'"
+				+ destino + "', 'tiempo':'" + tiempo + "',' velocidad':" + velocidad
+				+ ", 'precio':" + precio + ", 'fecha':'" + fecha + "'}";
+	}
+		
+
+	
+	public String toString2() {
+		return "{'idCarrera':" + idCarrera + ", 'tarifa':" + tarifa.toString()
+				+ ", 'usuario':" + usuario.toString() + ", 'origen':'" + origen + "', 'destino':'"
+				+ destino + "', 'tiempo':'" + tiempo + "', 'velocidad':" + velocidad
+				+ ", 'precio':" + precio + ", 'fecha':'" + fecha + "'}";
+	}
+
+
+
 
 	public Carrera() {
 	}
