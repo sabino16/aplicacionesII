@@ -44,16 +44,28 @@ public class ConsultarCarrerasProxy implements com.servicios.funciones.Consultar
     return consultarCarreras;
   }
   
+  public java.lang.String consultardatoscarrera(int idCarrera) throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.consultardatoscarrera(idCarrera);
+  }
+  
+  public java.lang.String listahistorial() throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.listahistorial();
+  }
+  
   public java.lang.String consultardatosusuario(int idUsuario) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
     return consultarCarreras.consultardatosusuario(idUsuario);
   }
   
-  public java.lang.String consultardatoscarrera(int idCarrera) throws java.rmi.RemoteException{
+  public java.lang.String consultarhistorial(int idUsuario) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.consultardatoscarrera(idCarrera);
+    return consultarCarreras.consultarhistorial(idUsuario);
   }
   
   
