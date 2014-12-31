@@ -4,7 +4,7 @@ import com.google.gson.*;
 
 import javax.persistence.EntityManager;
 
-
+/*
 import com.servicio.modelo.Carrera;
 import com.servicio.modelo.CarreraHome;
 import com.servicio.modelo.GeneralHome;
@@ -121,4 +121,4 @@ public class ConsultarCarreras {
 	      System.out.println(b);
 	}
 	
-}
+}*/

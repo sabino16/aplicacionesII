@@ -1,4 +1,4 @@
-package com.servicio.modelo;
+package com.servicios.modelo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

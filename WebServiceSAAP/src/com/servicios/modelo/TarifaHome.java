@@ -1,6 +1,6 @@
-package com.servicio.modelo;
+package com.servicios.modelo;
 
-// Generated 09/12/2014 03:58:34 PM by Hibernate Tools 3.4.0.CR1
+// Generated 31/12/2014 10:18:01 AM by Hibernate Tools 3.4.0.CR1
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -10,7 +10,7 @@ import org.apache.commons.logging.LogFactory;
 
 /**
  * Home object for domain model class Tarifa.
- * @see com.servicio.modelo.Tarifa
+ * @see com.servicios.modelo.Tarifa
  * @author Hibernate Tools
  */
 @Stateless
