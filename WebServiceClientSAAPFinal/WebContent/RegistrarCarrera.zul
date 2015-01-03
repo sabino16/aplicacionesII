@@ -28,7 +28,7 @@
 		<textbox id="textbox_tiempo" constraint="no empty" />
 	</row>
 	<row>
-		<label value="Velocidad:" />
+		<label value="Kilometros recorridos:" />
 		<doublebox id="textbox_velocidad" constraint="no empty" />
 	</row>
 	<row>
@@ -37,7 +37,7 @@
 	</row>
 	<row>
 		<label value="Fecha:" />
-		<datebox id="datebox_Inicio"/>
+		<datebox id="datebox_Inicio" format="mm/dd/yy"/>
 	</row>
 	<row>
 		<label value="Usuario:" />
@@ -46,6 +46,22 @@
 	<row>
 		<label value="Contraseña:" />
 		<textbox id="textbox_contrasena" constraint="no empty" />
+	</row>
+	<row>
+		<label value="latitud origen:" />
+		<doublebox id="textbox_latitud_origen" constraint="no empty" />
+	</row>
+	<row>
+		<label value="longitud origen:" />
+		<doublebox id="textbox_longitud_origen" constraint="no empty" />
+	</row>
+	<row>
+		<label value="latitud destino:" />
+		<doublebox id="textbox_latitud_destino" constraint="no empty" />
+	</row>
+	<row>
+		<label value="longitud destino:" />
+		<doublebox id="textbox_longitud_destino" constraint="no empty" />
 	</row>
 	<row>
 		<button label="GUARDAR" onClick="" id="btnGuardar"/>

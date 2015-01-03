@@ -21,8 +21,9 @@ apply="com.servicios.controladoes.RegistrarPasajeroControlador">
 		<textbox id="textbox_cedula" constraint="no empty" />
 	</row>
 	<row>
-		<label value="Usuario:" />
+		<label value="Usuario:"/>
 		<textbox id="textbox_usuario" constraint="no empty" />
+		<textbox id="textbox_comparacion" constraint="no empty" />
 	</row>
 	<row>
 		<label value="Password:" />

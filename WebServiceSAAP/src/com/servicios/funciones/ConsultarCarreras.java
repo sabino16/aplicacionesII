@@ -1,19 +1,18 @@
 package com.servicios.funciones;
 
 import com.google.gson.*;
+import com.servicios.modelo.Carrera;
+import com.servicios.modelo.CarreraHome;
+import com.servicios.modelo.GeneralHome;
+import com.servicios.modelo.Tarifa;
+import com.servicios.modelo.TarifaHome;
+import com.servicios.modelo.TipoUsuario;
+import com.servicios.modelo.TipoUsuarioHome;
+import com.servicios.modelo.Usuario;
+import com.servicios.modelo.UsuarioHome;
 
 import javax.persistence.EntityManager;
 
-/*
-import com.servicio.modelo.Carrera;
-import com.servicio.modelo.CarreraHome;
-import com.servicio.modelo.GeneralHome;
-import com.servicio.modelo.Tarifa;
-import com.servicio.modelo.TarifaHome;
-import com.servicio.modelo.TipoUsuario;
-import com.servicio.modelo.TipoUsuarioHome;
-import com.servicio.modelo.Usuario;
-import com.servicio.modelo.UsuarioHome;
 
 public class ConsultarCarreras {
 	GeneralHome gh;
@@ -121,4 +120,4 @@ public class ConsultarCarreras {
 	      System.out.println(b);
 	}
 	
-}*/
+}

@@ -153,7 +153,7 @@ public class RegistrarCarreras {
 		}
 	}
 	
-	public static void main(String [ ] args)
+	/*public static void main(String [ ] args)
 	{
 		RegistrarCarreras rc = new RegistrarCarreras();
 	      boolean a;
@@ -163,11 +163,11 @@ public class RegistrarCarreras {
 	      a = rc.registrarusuario("asdsd", "ddfd", "fdfef", "2342424", "barcelona5", "dfdfsff");
 	      
 	      
-	    		  /* b = rc.registrarcarrera(1, "barcelona", "campeon", "salinas", "santa elena",
+	    		   b = rc.registrarcarrera(1, "barcelona", "campeon", "salinas", "santa elena",
 	    		  "25min", 12.2, 2, "12/25/2014", 0.3453546464, -0.465645632, 0.5454454334, -0.454565635);
 	    boolean a;
-	    a = rc.iniciarsesion("kevin", "12");*/
+	    a = rc.iniciarsesion("kevin", "12");
 		System.out.println("   "+d + "    " + a);
-	}
+	}*/
 	
 }
