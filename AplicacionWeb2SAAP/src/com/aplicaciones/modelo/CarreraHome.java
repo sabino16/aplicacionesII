@@ -1,6 +1,6 @@
 package com.aplicaciones.modelo;
 
-// Generated 09/12/2014 04:19:32 PM by Hibernate Tools 3.4.0.CR1
+// Generated 06/01/2015 03:56:21 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.List;
 
@@ -147,7 +147,9 @@ public class CarreraHome {
 			return null;
 		}
 	}
+
+
+
 	
-		
 	
 }

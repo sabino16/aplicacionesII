@@ -27,7 +27,6 @@ import com.aplicaciones.modelo.Usuario;
 import com.aplicaciones.modelo.UsuarioHome;
 
 
-
 public class UsuarioControlador extends GenericForwardComposer<Component>{
 	
 	//VARIABLES DEL MODELO A UTILIZAR
@@ -172,20 +171,6 @@ public void GuardarUsuario(){
 		
 		Usuario usuarioeliminar= uh.findById(usuario.getIdUsuario());
 		
-		/*if(textbox_Apellidos.getValue().equals(" ")==false && textbox_Nombres.getValue().equals(" ")==false
-				&& textbox_Cedula.getValue().equals(" ")==false && textbox_telefono.getValue().equals(" ")==false
-				&& textbox_Email.getValue().equals(" ")==false){
-			
-			cliente.setApellidos(textbox_Apellidos.getValue());
-			cliente.setNombres(textbox_Nombres.getValue());
-			cliente.setCedula(textbox_Cedula.getValue());
-			cliente.setTelefono(textbox_telefono.getValue());
-			cliente.setEmail(textbox_Email.getValue());
-			
-		}else{
-			alert("No ha llenado todos los campos!");
-		}*/
-		
 		usuarioeliminar.setEstado("0");
 		uh.persist(usuarioeliminar);
 		alert("Datos Usuario Eliminados");
@@ -276,19 +261,10 @@ public void GuardarUsuario(){
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
 		}
-		/*if(tipou != null){
-			if (tipou.getDescripcion().equals("Múltiple")){
-				textbox_NumCamas.setDisabled(false);
-				
-			}else{
-				if (tipoh.getDescripcion().equals("Sencilla")){
-					textbox_NumCamas.setDisabled(true);
-					textbox_NumCamas.setValue(1);
-				}
-			}
-		}*/
+
 	}
 
 
 	
 }
+

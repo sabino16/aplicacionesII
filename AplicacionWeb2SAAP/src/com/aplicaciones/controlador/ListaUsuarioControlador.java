@@ -13,7 +13,6 @@ import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Center;
-import org.zkoss.zul.Intbox;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
@@ -23,6 +22,8 @@ import com.aplicaciones.modelo.GeneralHome;
 import com.aplicaciones.modelo.TipoUsuarioHome;
 import com.aplicaciones.modelo.Usuario;
 import com.aplicaciones.modelo.UsuarioHome;
+
+
 
 public class ListaUsuarioControlador extends GenericForwardComposer<Component>{
 

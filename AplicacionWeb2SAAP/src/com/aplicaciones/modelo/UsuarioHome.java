@@ -1,6 +1,6 @@
 package com.aplicaciones.modelo;
 
-// Generated 09/12/2014 04:19:32 PM by Hibernate Tools 3.4.0.CR1
+// Generated 06/01/2015 03:56:21 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.List;
 
@@ -9,8 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
-
 
 /**
  * Home object for domain model class Usuario.
@@ -120,5 +118,6 @@ public class UsuarioHome {
 			throw re;
 		}
 	}
-	
+
+
 }

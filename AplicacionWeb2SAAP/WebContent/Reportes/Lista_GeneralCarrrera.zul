@@ -1,0 +1,83 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="new page title" border="normal" apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+
+<listbox id="lista_GeneralCarrera" mold="paging" pageSize="5"
+		multiple="false" width="100%"
+		emptyMessage="No clients found in the result">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Lista de General de Carreras" colspan="2"
+				rowspan="1" />
+		</auxhead>
+		<auxhead sclass="category-center">
+
+			<auxheader colspan="1" rowspan="1">
+				<label value="Usuario: "></label>
+				<textbox id="textbox_usuario" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Tarifa: "></label>
+				<textbox id="textbox_tarifa" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Origen: "></label>
+				<textbox id="textbox_origen" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Destino: "></label>
+				<textbox id="textbox_destino" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Tiempo: "></label>
+				<textbox id="textbox_tiempo" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="KM: "></label>
+				<textbox id="textbox_km_recorridos" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Precio: "></label>
+				<textbox id="textbox_precio" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<label value="Fecha:: "></label>
+				<textbox id="textbox_fecha" ></textbox>
+			</auxheader>
+			
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Usuario" sort="auto(usuario.user)"/>
+			<listheader label="Tipo de tarifa" sort="auto(tarifa.tipoTarifa)"/>
+			<listheader label="Origen" sort="auto(origen)"/>
+			<listheader label="Destino" sort="auto(destino)"/>
+			<listheader label="Tiempo" sort="auto(tiempo)"/>
+			<listheader label="Km_Recorridos" sort="auto(kmRecorridos)"/>
+			<listheader label="Precio" sort="auto(precio)"/>
+			<listheader label="Fecha" sort="auto(fecha)"/>
+			
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.apellido} " />
+				<listcell label="${each.nombre} " />
+				<listcell label="${each.tipoUsuario.descripcion} " />
+			</listitem>
+		</template>
+	</listbox>
+
+
+
+
+
+
+</window>
+</zk>
