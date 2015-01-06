@@ -44,28 +44,40 @@ public class ConsultarCarrerasProxy implements com.servicios.funciones.Consultar
     return consultarCarreras;
   }
   
-  public java.lang.String consultardatoscarrera(int idCarrera) throws java.rmi.RemoteException{
+  public java.lang.String servicio_consultar_usuario_fechas(java.lang.String f_inicio, java.lang.String f_fin, int idUsuario) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.consultardatoscarrera(idCarrera);
+    return consultarCarreras.servicio_consultar_usuario_fechas(f_inicio, f_fin, idUsuario);
   }
   
-  public java.lang.String listahistorial() throws java.rmi.RemoteException{
+  public java.lang.String servicio_consultar_usuario(int idUsuario) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.listahistorial();
+    return consultarCarreras.servicio_consultar_usuario(idUsuario);
   }
   
-  public java.lang.String consultardatosusuario(int idUsuario) throws java.rmi.RemoteException{
+  public java.lang.String servicio_consultar_tarifa(java.lang.String tipoTarifa) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.consultardatosusuario(idUsuario);
+    return consultarCarreras.servicio_consultar_tarifa(tipoTarifa);
   }
   
-  public java.lang.String consultarhistorial(int idUsuario) throws java.rmi.RemoteException{
+  public java.lang.String servicio_consultar_carrera(int idCarrera) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.consultarhistorial(idUsuario);
+    return consultarCarreras.servicio_consultar_carrera(idCarrera);
+  }
+  
+  public java.lang.String servicio_consultar_usuario_origen_destino(java.lang.String parametro, int idUsuario) throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.servicio_consultar_usuario_origen_destino(parametro, idUsuario);
+  }
+  
+  public java.lang.String servicio_login(java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.servicio_login(user, contrasena);
   }
   
   

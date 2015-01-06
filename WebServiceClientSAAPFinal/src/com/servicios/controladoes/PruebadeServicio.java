@@ -13,19 +13,30 @@ import com.servicios.funciones.ConsultarCarrerasSoapBindingStub;
 public class PruebadeServicio {
 	
 	public void ConsultarCarrera(){
-		String ConsultarCarrera;
-		String ConsultarCarrera2;
+		String Login;
+		String ConsultarCarrera_idCarrera;
+		String ConsultarTarifa;
+		String ConsultarCarrera_idUsuario;
+		String ConsultarCarrera_Fechas;
+		String ConsultarCarrera_OrigenDestino;
 		
 		try {
 			ConsultarCarrerasSoapBindingStub pbinding = (ConsultarCarrerasSoapBindingStub) new
 			ConsultarCarrerasServiceLocator().getConsultarCarreras(new URL("http://localhost:8080/WebServiceSAAP/services/ConsultarCarreras"));
 		
 			
-			ConsultarCarrera = pbinding.consultardatosusuario(1);
-			ConsultarCarrera2 = pbinding.consultardatoscarrera(1);
-			System.out.println(ConsultarCarrera);
-		     System.out.println(ConsultarCarrera2);
-			
+			Login = pbinding.servicio_login("andrea", "1234");
+			ConsultarCarrera_idCarrera = pbinding.servicio_consultar_carrera(2);
+			ConsultarTarifa = pbinding.servicio_consultar_tarifa("Diurna");
+			ConsultarCarrera_idUsuario = pbinding.servicio_consultar_usuario(7);
+			ConsultarCarrera_Fechas = pbinding.servicio_consultar_usuario_fechas("2014-12-25", "2015-05-12",9);
+			ConsultarCarrera_OrigenDestino = pbinding.servicio_consultar_usuario_origen_destino("salinas",4);
+			System.out.println(Login);
+		    System.out.println(ConsultarCarrera_idCarrera);
+		    System.out.println(ConsultarTarifa);
+		    System.out.println(ConsultarCarrera_idUsuario);
+		    System.out.println(ConsultarCarrera_Fechas);
+		    System.out.println(ConsultarCarrera_OrigenDestino);
 	
 			
 		} catch (MalformedURLException e) {
