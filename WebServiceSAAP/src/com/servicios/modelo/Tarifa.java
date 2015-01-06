@@ -116,5 +116,15 @@ public class Tarifa implements java.io.Serializable {
 	public void setCarreras(Set<Carrera> carreras) {
 		this.carreras = carreras;
 	}
+	
+	public String toJsonCDCarrera() {
+		return "{'idTarifa':" + idTarifa + ", 'tipoTarifa':'" + tipoTarifa
+				+ "', 'valor':'" + valor + "'}";
+	}
 
+	public String toJsonCDTarifa() {
+		return "{'idTarifa':" + idTarifa + ", 'tipoTarifa':'" + tipoTarifa
+				+ "', 'valor':'" + valor + "'}";
+	}
+	
 }

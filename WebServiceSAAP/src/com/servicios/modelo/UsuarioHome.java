@@ -79,24 +79,23 @@ public class UsuarioHome {
 	}
 	
 	
-	public Usuario consultarusuario(int idUsuario){
+	
+	public Usuario Servicio_Login(String user, String contrasena)
+	{
 		try{
-		Usuario usuario;
-		String sql = "select * from usuario as u, carrera as c, tarifa as t"+ 
-			      "where c.id_usuario=u.id_usuario and"+
-			      "c.id_tarifa=t.id_tarifa"+  
-			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
-			      "u.apellido= :apellidos";
-		
-		usuario = (Usuario) entityManager.createQuery(sql).setParameter("idUsuario",idUsuario).getResultList();
-		return usuario;
+			Usuario usuario;
+			String sql="select u from Usuario u, TipoUsuario tu where u.tipoUsuario.idTipousuario = tu.idTipousuario and u.user = :userr and u.pass = :passs and  u.estado='1'";
+			
+			usuario =  (Usuario) entityManager.createQuery(sql).setParameter("userr", user).setParameter("passs", contrasena).getSingleResult();
+			
+			return usuario;
 		}catch(RuntimeException re){
-			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
+			log.error("Error en iniciarsesion: UsuarioHome" + re.getMessage());
 			return null;
 		}
 	}
 	
-		
+	
 	public List<Usuario> iniciarsesion(String user, String contrasena){
 		try{
 		List<Usuario> usuario;

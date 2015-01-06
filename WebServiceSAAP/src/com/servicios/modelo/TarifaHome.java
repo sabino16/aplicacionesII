@@ -74,4 +74,19 @@ public class TarifaHome {
 			throw re;
 		}
 	}
+	
+	public Tarifa Servicio_Consultar_Tarifa(String tipoTarifa){
+		try{
+		Tarifa tarifa;
+		String sql = "select t from Tarifa t where t.estado='1' and t.tipoTarifa= :tipoTarifa";
+		
+		tarifa = (Tarifa) entityManager.createQuery(sql).setParameter("tipoTarifa",tipoTarifa).getSingleResult();
+		return tarifa;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarTarifa: XD" + re.getMessage());
+			return null;
+		}
+	}
+	
+	
 }

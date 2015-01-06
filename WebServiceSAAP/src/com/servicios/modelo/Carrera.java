@@ -230,4 +230,21 @@ public class Carrera implements java.io.Serializable {
 		this.estado = estado;
 	}
 
+	
+	public String toJsonCDCarrera() {
+		return "{'idCarrera=':" + idCarrera + ", 'tarifa':" + tarifa.toJsonCDCarrera()
+				+ ", 'usuario':" + usuario.toJsonCDCarrera() + ", 'origen':'" + origen + "', 'destino':'"
+				+ destino + "', 'tiempo':'" + tiempo + "', 'kmRecorridos':"
+				+ kmRecorridos + ", 'precio':" + precio + ", 'fecha':'" + fecha
+				+ "', 'latitudOrigen':" + latitudOrigen + ", 'longitudOrigen':"
+				+ longitudOrigen + ", 'latitudDestino':" + latitudDestino
+				+ ", 'longitudDestino':" + longitudDestino + "}";
+	}
+	
+	
+	
+	
+	
+	
+
 }

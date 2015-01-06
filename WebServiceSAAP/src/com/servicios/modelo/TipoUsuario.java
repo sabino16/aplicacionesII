@@ -49,6 +49,15 @@ public class TipoUsuario implements java.io.Serializable {
 	private String descripcion;
 	private String estado;
 	private Set<Usuario> usuarios = new HashSet<Usuario>(0);
+	
+	
+	
+	
+	public String toJsonLogin() {
+		return "{'idTipousuario': " + idTipousuario + ", 'descripcion': '"
+				+ descripcion  
+				+ "'}";
+	}
 
 	public TipoUsuario() {
 	}

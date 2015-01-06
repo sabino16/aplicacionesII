@@ -2,11 +2,15 @@ package com.servicios.modelo;
 
 // Generated 31/12/2014 10:18:01 AM by Hibernate Tools 3.4.0.CR1
 
+import java.util.Date;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
 
 /**
  * Home object for domain model class Carrera.
@@ -75,37 +79,20 @@ public class CarreraHome {
 		}
 	}
 	
-	
-	public Carrera consultarcarrera(int idCarrera){
+		
+	public Carrera Servicio_Consultar_Carrera(int idCarrera){
 		try{
 		Carrera carrera;
-		String sql = "select * from usuario as u, carrera as c, tarifa as t"+ 
-			      "where c.id_usuario=u.id_usuario and"+
-			      "c.id_tarifa=t.id_tarifa"+  
-			      "and u.estado='1' and tax.estado='1' and c.estado='1' and t.estado='1'"+
-			      "u.apellido= :apellidos";
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and c.idCarrera= :idCarrera";
 		
-		carrera = (Carrera) entityManager.createQuery(sql).setParameter("idCarrera",idCarrera).getResultList();
+		carrera = (Carrera) entityManager.createQuery(sql).setParameter("idCarrera",idCarrera).getSingleResult();
 		return carrera;
 		}catch(RuntimeException re){
 			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
 			return null;
 		}
 	}
+
 	
-	/*@SuppressWarnings("unchecked")
-	public List<Carrera> consultarcarrera(){
-		try{
-		List<Carrera> lista;
-		lista = getEntityManager().createQuery("select c.* from usuario as u,"+
-				"carrera as c, tarifa as t where c.id_usuario=u.id_usuario and"+ 
-				"c.id_tarifa=t.id_tarifa  and u.estado='1' and c.estado='1' and"+
-				"t.estado='1'").getResultList();
-		return lista;
-		}catch(RuntimeException re){
-			log.error("Error en filtrarReservaciones: CarreraHome" + re.getMessage());
-			return null;
-		}
-	}*/
-	
+		
 }
