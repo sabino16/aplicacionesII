@@ -92,7 +92,48 @@ public class CarreraHome {
 			return null;
 		}
 	}
-
+	
+	
+	public List<Carrera> Servicio_Consultar_Carrera_usuario(int idUsuario){
+		try{
+		List<Carrera> lista;
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and c.usuario.idUsuario = :idUsuario";
+		
+		lista = entityManager.createQuery(sql).setParameter("idUsuario", idUsuario).getResultList();
+		return lista;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
+			return null;
+		}
+	}
+	
+	public List<Carrera> Servicio_Consultar_Carrera_fechas(String f_inicio, String f_fin, int idUsuario){
+		try{
+		List<Carrera> lista;
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and fecha >= :f_inicio and fecha <= :f_fin  and c.usuario.idUsuario = :idUsuario";
+		
+		lista = entityManager.createQuery(sql).setParameter("f_inicio", f_inicio).setParameter("f_fin", f_fin).setParameter("idUsuario", idUsuario).getResultList();
+		return lista;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
+			return null;
+		}
+	}
+	
+	
+	public List<Carrera> Servicio_Consultar_Carrera_origen_destino(String parametro, int idUsuario){
+		try{
+		List<Carrera> lista;
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and (c.origen like :parametro or c.destino like :parametro)  and c.usuario.idUsuario = :idUsuario";
+		
+		lista = entityManager.createQuery(sql).setParameter("parametro", "%"+parametro+"%").setParameter("idUsuario", idUsuario).getResultList();
+		return lista;
+		}catch(RuntimeException re){
+			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
+			return null;
+		}
+	}
+	
 	
 		
 }

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://funciones.servicios.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://funciones.servicios.com" xmlns:intf="http://funciones.servicios.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://funciones.servicios.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="servicio_consultar_usuario_fechas">
+    <complexType>
+     <sequence>
+      <element name="f_inicio" type="xsd:string"/>
+      <element name="f_fin" type="xsd:string"/>
+      <element name="idUsuario" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_fechasResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_usuario_fechasReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario">
+    <complexType>
+     <sequence>
+      <element name="idUsuario" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuarioResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_usuarioReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_tarifa">
+    <complexType>
+     <sequence>
+      <element name="tipoTarifa" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_tarifaResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_tarifaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_carrera">
+    <complexType>
+     <sequence>
+      <element name="idCarrera" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_carreraResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_carreraReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_origen_destino">
+    <complexType>
+     <sequence>
+      <element name="parametro" type="xsd:string"/>
+      <element name="idUsuario" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_origen_destinoResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_usuario_origen_destinoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_login">
+    <complexType>
+     <sequence>
+      <element name="user" type="xsd:string"/>
+      <element name="contrasena" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_loginResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_loginReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="servicio_consultar_carreraResponse">
+
+      <wsdl:part element="impl:servicio_consultar_carreraResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_tarifaRequest">
+
+      <wsdl:part element="impl:servicio_consultar_tarifa" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuario_origen_destinoResponse">
+
+      <wsdl:part element="impl:servicio_consultar_usuario_origen_destinoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuario_fechasRequest">
+
+      <wsdl:part element="impl:servicio_consultar_usuario_fechas" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuarioRequest">
+
+      <wsdl:part element="impl:servicio_consultar_usuario" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_loginResponse">
+
+      <wsdl:part element="impl:servicio_loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_carreraRequest">
+
+      <wsdl:part element="impl:servicio_consultar_carrera" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_tarifaResponse">
+
+      <wsdl:part element="impl:servicio_consultar_tarifaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_loginRequest">
+
+      <wsdl:part element="impl:servicio_login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuario_origen_destinoRequest">
+
+      <wsdl:part element="impl:servicio_consultar_usuario_origen_destino" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuario_fechasResponse">
+
+      <wsdl:part element="impl:servicio_consultar_usuario_fechasResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="servicio_consultar_usuarioResponse">
+
+      <wsdl:part element="impl:servicio_consultar_usuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ConsultarCarreras">
+
+      <wsdl:operation name="servicio_consultar_usuario_fechas">
+
+         <wsdl:input message="impl:servicio_consultar_usuario_fechasRequest" name="servicio_consultar_usuario_fechasRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_usuario_fechasResponse" name="servicio_consultar_usuario_fechasResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario">
+
+         <wsdl:input message="impl:servicio_consultar_usuarioRequest" name="servicio_consultar_usuarioRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_usuarioResponse" name="servicio_consultar_usuarioResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_tarifa">
+
+         <wsdl:input message="impl:servicio_consultar_tarifaRequest" name="servicio_consultar_tarifaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_tarifaResponse" name="servicio_consultar_tarifaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_carrera">
+
+         <wsdl:input message="impl:servicio_consultar_carreraRequest" name="servicio_consultar_carreraRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_carreraResponse" name="servicio_consultar_carreraResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+
+         <wsdl:input message="impl:servicio_consultar_usuario_origen_destinoRequest" name="servicio_consultar_usuario_origen_destinoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_usuario_origen_destinoResponse" name="servicio_consultar_usuario_origen_destinoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_login">
+
+         <wsdl:input message="impl:servicio_loginRequest" name="servicio_loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_loginResponse" name="servicio_loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ConsultarCarrerasSoapBinding" type="impl:ConsultarCarreras">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="servicio_consultar_usuario_fechas">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_usuario_fechasRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_usuario_fechasResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_usuarioRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_usuarioResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_tarifa">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_tarifaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_tarifaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_carrera">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_carreraRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_carreraResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_usuario_origen_destinoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_usuario_origen_destinoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ConsultarCarrerasService">
+
+      <wsdl:port binding="impl:ConsultarCarrerasSoapBinding" name="ConsultarCarreras">
+
+         <wsdlsoap:address location="http://localhost:8080/WebServiceSAAP/services/ConsultarCarreras"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
