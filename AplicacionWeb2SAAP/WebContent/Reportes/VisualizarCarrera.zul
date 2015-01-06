@@ -1,0 +1,67 @@
+<?page title="Visualizar Carreras" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="DATOS DE LA CARRERA" border="normal" id="WinVisualizarCarreras" apply="com.aplicaciones.controlador.VisualizarDatosCarreras">
+
+<separator></separator>
+	<separator></separator>
+	
+	<grid width="90%" >
+			<rows>
+			
+				<row>
+					<label value="Apellidos:" />
+					<textbox id="textbox_apellidos"  width="80%" disabled="true"/>
+				</row>
+				<row>
+					<label value="Nombres:" />
+					<textbox id="textbox_nombres"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Tipo de Tarifa:" />
+					<textbox id="textbox_tarifa" width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Origen:" />
+					<textbox id="textbox_origen"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Destino" />
+					<textbox id="textbox_destino"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Tiempo:" />
+					<textbox id="textbox_tiempo"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Km_recorridos:" />
+					<doublebox id="textbox_KM_recorridos"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Precio:" />
+					<textbox id="textbox_precio"  width="80%" disabled="true"/>
+				</row>
+				
+				<row>
+					<label value="Fecha:" />
+					<textbox id="textbox_fecha"  width="80%" disabled="true"/>
+				</row>
+				<row>
+					<label value="Coordenadas Origen:" />
+					<doublebox id="textbox_coord_Origen"  width="80%" disabled="true"/>
+				</row>
+				<row>
+					<label value="Coordenadas Destino:" />
+					<doublebox id="textbox_coord_destino"  width="80%" disabled="true"/>
+				</row>
+				
+			</rows>
+		</grid>
+
+</window>
+</zk>

@@ -91,7 +91,19 @@ public class CarreraHome {
 		}
 	}
 	
-	
+	public List<Carrera> findAllHQL() { //DEVUELVE UNA LISTA DE CLIENTES
+		log.debug("getting usuario instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
+		try {
+			List<Carrera> lista = entityManager.createQuery("from Carrera where estado='1'").getResultList();
+			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
+			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
+			log.debug("get successful");	//MENSAJE EN CONSOLA
+			return lista;
+		} catch (RuntimeException re) {	 //POSIBLE EXCEPCION
+			log.error("get failed in findAll: CarreraHome", re);
+			throw re;
+		}
+	}
 	
 	public List<Carrera> filtrarCompleto(String nombres, String apellidos){
 		try{

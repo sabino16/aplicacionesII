@@ -1,13 +1,13 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="new page title" border="normal" apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+<window title="LISTA GENERAL DE CARRERAS" border="normal" id="WinListaCarreras" apply="com.aplicaciones.controlador.ListaGeneralCarreraControlador">
 
 <listbox id="lista_GeneralCarrera" mold="paging" pageSize="5"
 		multiple="false" width="100%"
 		emptyMessage="No clients found in the result">
 		
 		<auxhead sclass="category-center" >
-			<auxheader label="Lista de General de Carreras" colspan="2"
+			<auxheader label="Lista General de Carreras" colspan="2"
 				rowspan="1" />
 		</auxhead>
 		<auxhead sclass="category-center">
@@ -39,17 +39,17 @@
 			
 			<auxheader colspan="1" rowspan="1">
 				<label value="KM: "></label>
-				<textbox id="textbox_km_recorridos" ></textbox>
+				<doublebox id="textbox_km_recorridos" ></doublebox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
 				<label value="Precio: "></label>
-				<textbox id="textbox_precio" ></textbox>
+				<doublebox id="textbox_precio" ></doublebox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<label value="Fecha:: "></label>
-				<textbox id="textbox_fecha" ></textbox>
+				<label value="Fecha: "></label>
+				<calendar id="calendar_fecha"/>
 			</auxheader>
 			
 		</auxhead>
@@ -67,9 +67,14 @@
 			</listhead>
 		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
 			<listitem>
-				<listcell label="${each.apellido} " />
-				<listcell label="${each.nombre} " />
-				<listcell label="${each.tipoUsuario.descripcion} " />
+				<listcell label="${each.usuario.user} " />
+				<listcell label="${each.tarifa.tipoTarifa} " />
+				<listcell label="${each.origen} " />
+				<listcell label="${each.destino} " />
+				<listcell label="${each.tiempo} " />
+				<listcell label="${each.kmRecorridos} " />
+				<listcell label="${each.precio} " />
+				<listcell label="${each.fecha} " />
 			</listitem>
 		</template>
 	</listbox>
