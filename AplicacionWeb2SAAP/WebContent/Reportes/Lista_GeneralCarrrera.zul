@@ -48,8 +48,8 @@
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<label value="Fecha: "></label>
-				<calendar id="calendar_fecha"/>
+				<label value=""></label>
+				<datebox id="calendar_fecha"/>
 			</auxheader>
 			
 		</auxhead>
