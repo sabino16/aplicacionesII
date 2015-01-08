@@ -1,6 +1,7 @@
 <?page title="Auto Generated index.zul"?>
 <window title="Sistema Taximetro Virtual" style="text-align:'center'" border="normal" width="100%" height="100%" 
-apply="com.aplicaciones.controlador.IndexControlador" contentStyle="overflow:auto" mode="modal" sizable="false" >
+apply="com.aplicaciones.controlador.IndexControlador" contentStyle="overflow:auto" mode="modal" sizable="false" 
+id="WinIndex" >
 <borderlayout>
     <north>
     	<div>

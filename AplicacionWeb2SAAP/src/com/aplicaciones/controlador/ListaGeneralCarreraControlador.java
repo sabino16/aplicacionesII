@@ -7,6 +7,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 import org.zkoss.zk.ui.Component;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.Session;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Center;
@@ -41,7 +44,7 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 			Textbox textbox_usuario, textbox_tarifa, textbox_origen, textbox_destino, textbox_tiempo;
 			Doublebox textbox_precio, textbox_km_recorridos;
 			Datebox calendar_fecha;
-			Window WinListaUsuarios;
+			Window WinListaCarreras;
 			Center centro;
 			
 			@Override
@@ -76,7 +79,7 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 					//REFRESCAR LISTA
 					lista_GeneralCarrera.renderAll();
 				}else{
-					alert("lista de libros no encontrada");
+					alert("lista no encontrada");
 				}
 		}
 			
@@ -101,7 +104,7 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 					lista_GeneralCarrera.renderAll();
 					}
 					else{
-						alert("lista de libros no encontrada");
+						alert("lista no encontrada");
 					}
 				}else
 				{
@@ -118,7 +121,7 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 						lista_GeneralCarrera.renderAll();
 						}
 						else{
-							alert("lista de libros no encontrada");
+							alert("lista no encontrada");
 						}
 					}else
 					{
@@ -135,10 +138,94 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 							lista_GeneralCarrera.renderAll();
 							}
 							else{
-								alert("lista de libros no encontrada");
+								alert("lista no encontrada");
 							}
 						}else{
-							alert("falta");
+							
+							if((textbox_precio.getValue()!=null)&&(textbox_km_recorridos.getValue()!=null)
+									&&(calendar_fecha.getValue()==null)){
+								ArrayList<Carrera> lista=(ArrayList<Carrera>) ch.filtarcamposStringKmPrecioHQL(textbox_usuario.getValue().toString(), 
+										textbox_tarifa.getValue().toString(), textbox_origen.getValue().toString(), textbox_destino.getValue().toString(), 
+										textbox_tiempo.getValue().toString(), textbox_precio.getValue(), textbox_km_recorridos.getValue());
+								if(lista!=null){
+								ListModelList<Carrera> listmodel = new ListModelList<Carrera>(lista);
+								lista_GeneralCarrera.setModel(listmodel);
+								//REFRESCAR LISTA
+								lista_GeneralCarrera.renderAll();
+								}
+								else{
+									alert("lista no encontrada");
+								}
+							}else{
+								if((textbox_precio.getValue()==null)&&(textbox_km_recorridos.getValue()!=null)
+										&&(calendar_fecha.getValue()!=null)){
+									ArrayList<Carrera> lista=(ArrayList<Carrera>) ch.filtarcamposStringKmFechaHQL(textbox_usuario.getValue().toString(), 
+											textbox_tarifa.getValue().toString(), textbox_origen.getValue().toString(), textbox_destino.getValue().toString(), 
+											textbox_tiempo.getValue().toString(), textbox_km_recorridos.getValue(), calendar_fecha.getValue());
+									if(lista!=null){
+									ListModelList<Carrera> listmodel = new ListModelList<Carrera>(lista);
+									lista_GeneralCarrera.setModel(listmodel);
+									//REFRESCAR LISTA
+									lista_GeneralCarrera.renderAll();
+									}
+									else{
+										alert("lista no encontrada");
+									}
+								}else{
+									if((textbox_precio.getValue()!=null)&&(textbox_km_recorridos.getValue()==null)
+											&&(calendar_fecha.getValue()!=null)){
+										
+										ArrayList<Carrera> lista=(ArrayList<Carrera>) ch.filtarcamposStringPrecioFechaHQL(textbox_usuario.getValue().toString(), 
+												textbox_tarifa.getValue().toString(), textbox_origen.getValue().toString(), textbox_destino.getValue().toString(), 
+												textbox_tiempo.getValue().toString(), textbox_precio.getValue(), calendar_fecha.getValue());
+										if(lista!=null){
+										ListModelList<Carrera> listmodel = new ListModelList<Carrera>(lista);
+										lista_GeneralCarrera.setModel(listmodel);
+										//REFRESCAR LISTA
+										lista_GeneralCarrera.renderAll();
+										}
+										else{
+											alert("lista no encontrada");
+										}
+									}else{
+										if((textbox_precio.getValue()!=null)&&(textbox_km_recorridos.getValue()!=null)
+												&&(calendar_fecha.getValue()!=null)){
+											
+											ArrayList<Carrera> lista=(ArrayList<Carrera>) ch.filtarcamposStringPrecioKmFechaHQL(textbox_usuario.getValue().toString(), 
+													textbox_tarifa.getValue().toString(), textbox_origen.getValue().toString(), textbox_destino.getValue().toString(), 
+													textbox_tiempo.getValue().toString(), textbox_km_recorridos.getValue() ,textbox_precio.getValue(), calendar_fecha.getValue());
+											if(lista!=null){
+											ListModelList<Carrera> listmodel = new ListModelList<Carrera>(lista);
+											lista_GeneralCarrera.setModel(listmodel);
+											//REFRESCAR LISTA
+											lista_GeneralCarrera.renderAll();
+											}else{
+												alert("lista no encontrada");
+											}
+										}
+										else{
+											if((textbox_precio.getValue()==null)&&(textbox_km_recorridos.getValue()==null)
+													&&(calendar_fecha.getValue()==null)){
+												ArrayList<Carrera> lista=(ArrayList<Carrera>) ch.filtarcamposStringHQL(textbox_usuario.getValue().toString(), 
+														textbox_tarifa.getValue().toString(), textbox_origen.getValue().toString(), textbox_destino.getValue().toString(), 
+														textbox_tiempo.getValue().toString());
+												if(lista!=null){
+												ListModelList<Carrera> listmodel = new ListModelList<Carrera>(lista);
+												lista_GeneralCarrera.setModel(listmodel);
+												//REFRESCAR LISTA
+												lista_GeneralCarrera.renderAll();
+												}else{
+													alert("lista no encontrada");
+												}
+											}
+											else{
+												alert("La validacion no existe");
+											}
+											
+										}
+									}
+								}
+							}
 						}
 					}
 				}
@@ -150,17 +237,11 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 			}
 			
 			public void onChange$textbox_usuario(){
-				alert("fecha: " + calendar_fecha.getValue());
-				alert("usuario: " + textbox_usuario.getValue().toString());	
-				alert("tarifa: " + textbox_tarifa.getValue().toString());
-				alert("precio: " + textbox_precio.getValue());
-				alert("origen: " + textbox_origen.getValue().toString());
-				alert("destino: " + textbox_destino.getValue().toString());
-				alert("km: " + textbox_km_recorridos.getValue());
+				filtrar();
 			}
 			
 			public void onChange$textbox_tarifa(){
-			
+				filtrar();
 			}
 			
 			public void onChange$textbox_precio(){
@@ -168,15 +249,15 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 			}
 			
 			public void onChange$textbox_origen(){
-				
+				filtrar();
 			}
 			
 			public void onChange$textbox_destino(){
-				
+				filtrar();
 			}
 			
 			public void onChange$textbox_tiempo(){
-				
+				filtrar();
 			}
 			
 			public void onChange$textbox_km_recorridos(){
@@ -186,4 +267,18 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 			public void onChange$calendar_fecha(){
 				filtrar();
 			}
+			
+			
+			public void onSelect$lista_GeneralCarrera(){
+				if(centro.getFirstChild()!=null){
+					centro.removeChild(centro.getFirstChild());
+				}
+					Carrera CarreraSeleccionada = lista_GeneralCarrera.getSelectedItem().getValue();
+					Session session;
+					session=Sessions.getCurrent();
+					session.setAttribute("CarreraSeleccionada", CarreraSeleccionada);
+					
+					Window win = (Window)Executions.createComponents("Reportes/VisualizarCarrera.zul", centro, null);
+				}
+			
 }

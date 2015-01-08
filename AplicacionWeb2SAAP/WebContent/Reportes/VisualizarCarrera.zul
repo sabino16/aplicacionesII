@@ -44,7 +44,7 @@
 				
 				<row>
 					<label value="Precio:" />
-					<textbox id="textbox_precio"  width="80%" disabled="true"/>
+					<doublebox id="textbox_precio"  width="80%" disabled="true"/>
 				</row>
 				
 				<row>

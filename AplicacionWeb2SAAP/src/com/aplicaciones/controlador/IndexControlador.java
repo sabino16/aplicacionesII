@@ -39,6 +39,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	Label lblUsuario;
 	Label lblNombre;
 	Menubar barraMenu;
+	Window WinIndex;
 	
 	public void  crearMenu(){
 		menuUsuarios = new Menu("Usuarios");
