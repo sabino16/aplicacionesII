@@ -1,0 +1,59 @@
+<?page title="Lista General Pasajeros Carrera" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+<window title="LISTA GENERAL DE CARRERAS" border="normal" id="WinListaCarreras" apply="com.aplicaciones.controlador.ListaGeneralPasajeroCarreraControlador">
+
+<listbox id="lista_General_Pasajero_Carrera" mold="paging" pageSize="5"
+		multiple="false" width="100%"
+		emptyMessage="No existen carreras con los valores ingresados">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Lista General de Carreras" colspan="2"
+				rowspan="1" />
+		</auxhead>
+
+		<auxhead sclass="category-center">
+		
+			<auxheader colspan="2" rowspan="1">
+				<label value="Tipo Tarifa" />
+				<textbox id="textbox_tarifa" ></textbox>
+			</auxheader>
+
+			<auxheader colspan="2" rowspan="1">
+				<label value="Origen" />
+				<textbox id="textbox_origen" ></textbox>
+			</auxheader>
+			
+			<auxheader colspan="2" rowspan="1">
+			<label value="Destino" />
+				<textbox id="textbox_destino" ></textbox>
+			</auxheader>
+			
+					
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Tipo de tarifa" sort="auto(tarifa.tipoTarifa)"/>
+			<listheader label="Origen" sort="auto(origen)"/>
+			<listheader label="Destino" sort="auto(destino)"/>
+			<listheader label="Tiempo" sort="auto(tiempo)"/>
+			<listheader label="Km_Recorridos" sort="auto(kmRecorridos)"/>
+			<listheader label="Precio" sort="auto(precio)"/>
+			<listheader label="Fecha" sort="auto(fecha)"/>
+			
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.tarifa.tipoTarifa} " />
+				<listcell label="${each.origen} " />
+				<listcell label="${each.destino} " />
+				<listcell label="${each.tiempo} " />
+				<listcell label="${each.kmRecorridos} " />
+				<listcell label="${each.precio} " />
+				<listcell label="${each.fecha} " />
+			</listitem>
+		</template>
+	</listbox>
+</window>
+</zk>
+
