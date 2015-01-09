@@ -106,6 +106,9 @@ public class CarreraHome {
 		}
 	}
 	
+	
+	
+	
 	public List<Carrera> filtrarCompleto(String nombres, String apellidos){
 		try{
 		List<Carrera> lista;

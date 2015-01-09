@@ -1,0 +1,49 @@
+<?page title="Lista Pasajeros" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window title="Lista Pasajeros" border="normal" height="100%" id="WinListaPasajeros" apply="com.aplicaciones.controlador.ListaGeneralPasajerosControlador" >
+<listbox id="listaPasajeros" mold="paging" pageSize="5"
+		multiple="false" width="100%"
+		emptyMessage="No se encuentra una lista de pasajeros">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Lista de Pasajeros" colspan="1"
+				rowspan="1" />
+		</auxhead>
+		<auxhead sclass="category-center">
+			<auxheader colspan="1" rowspan="1">
+				<label value="Nombre"></label>
+				<textbox id="textbox_Nombres" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<label value="Apellido"></label>
+				<textbox id="textbox_Apellidos" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<label value="Cedula"></label>
+				<textbox id="textbox_Cedula" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<label value="Usuario"></label>
+				<textbox id="textbox_Usuario" ></textbox>
+			</auxheader>
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Nombres" sort="auto(nombre)"/>
+			<listheader label="Apellidos" sort="auto(apellido)"/>
+			<listheader label="Cedula" sort="auto(cedula)"/>
+			<listheader label="Usuario" sort="auto(user)"/>
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.nombre} " />
+				<listcell label="${each.apellido} " />
+				<listcell label="${each.cedula} " />
+				<listcell label="${each.user} " />
+			</listitem>
+		</template>
+	</listbox>
+</window>
+
+</zk>

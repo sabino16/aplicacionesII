@@ -32,6 +32,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	Menuitem menuitemUVisualizar;
 	Menuitem menuitemCVisualizar;
 	Menuitem menuitemRCarreras;
+	Menuitem menuitemRPasajeros;
 	
 	@Wire
 	Button btnIniciararSesion, btnCerrarSesion;
@@ -84,12 +85,20 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		menuReportes = new Menu("Reportes");
 		Menupopup menuReporte = new Menupopup();
 		menuReportes.setVisible(false);
+		
 		menuitemRCarreras = new Menuitem("Carreras");
 		menuitemRCarreras.setVisible(false);
 		menuitemRCarreras.setValue("Reportes/Lista_GeneralCarrrera.zul");
 		menuitemRCarreras.addEventListener("onClick", new MenuListener());
 		
+		menuitemRPasajeros = new Menuitem("Pasajeros");
+		menuitemRPasajeros.setVisible(false);
+		menuitemRPasajeros.setValue("Reportes/Lista_GeneralPasajeros.zul");
+		menuitemRPasajeros.addEventListener("onClick", new MenuListener());
+		
 		menuReporte.appendChild(menuitemRCarreras);
+		menuReporte.appendChild(menuitemRPasajeros);
+		
 		menuReportes.appendChild(menuReporte);
 		barraMenu.appendChild(menuReportes);
 		
@@ -148,6 +157,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				menuitemUVisualizar.setVisible(true);
 				menuitemCVisualizar.setVisible(true);
 				menuitemRCarreras.setVisible(true);
+				menuitemRPasajeros.setVisible(true);
 				
 		}else{
 			lblUsuario.setValue(" ");
@@ -161,6 +171,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 			menuitemUVisualizar.setVisible(false);
 			menuitemCVisualizar.setVisible(false);
 			menuitemRCarreras.setVisible(false);
+			menuitemRPasajeros.setVisible(false);
 			btnIniciararSesion.setVisible(true);
 			btnCerrarSesion.setVisible(false);
 			}

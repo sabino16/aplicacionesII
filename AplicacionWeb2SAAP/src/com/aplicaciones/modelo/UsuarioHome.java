@@ -120,4 +120,35 @@ public class UsuarioHome {
 	}
 
 
+	public List<Usuario> Reporte_Lista_Pasajeros(){
+		log.debug("getting usuario instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
+		try {
+			List<Usuario> lista = entityManager.createQuery("select u from Usuario u, TipoUsuario tu where u.tipoUsuario.idTipousuario = tu.idTipousuario and tu.idTipousuario = 1 and  u.estado='1'").getResultList();
+			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
+			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
+			log.debug("get successful");	//MENSAJE EN CONSOLA
+			return lista;
+		} catch (RuntimeException re) {	 //POSIBLE EXCEPCION
+			log.error("get failed in findAll: UsuarioHome", re);
+			throw re;
+		}
+	}
+	
+	
+	
+	public List<Usuario> Reporte_Lista_Pasajeros_todos_filtros(String Nombre, String Apellido, String Cedula){
+		log.debug("getting usuario instance instances"); //IMPRIME EN CONSOLA UN MENSAJE
+		try {
+			List<Usuario> lista = entityManager.createQuery("select u from Usuario u, TipoUsuario tu where u.tipoUsuario.idTipousuario = tu.idTipousuario and tu.idTipousuario = 1 and  u.estado='1' and u.nombre like :nombre and u.apellido like :apellido and u.cedula like :cedula" ).setParameter("nombre", "%"+ Nombre+ "%").setParameter("apellido", "%"+ Apellido+ "%").setParameter("cedula", "%"+ Cedula+ "%").getResultList();
+			//EN HIBERNATE SE UTILIZA EL LENGUAJE HQL
+			//SE ESCRIBE EL NOMBRE DE LA ENTIDAD LIBR O
+			log.debug("get successful");	//MENSAJE EN CONSOLA
+			return lista;
+		} catch (RuntimeException re) {	 //POSIBLE EXCEPCION
+			log.error("get failed in findAll: UsuarioHome", re);
+			throw re;
+		}
+	}
+	
+	
 }
