@@ -44,18 +44,6 @@ public class ConsultarCarrerasProxy implements com.servicios.funciones.Consultar
     return consultarCarreras;
   }
   
-  public java.lang.String servicio_consultar_usuario_fechas(java.lang.String f_inicio, java.lang.String f_fin, int idUsuario) throws java.rmi.RemoteException{
-    if (consultarCarreras == null)
-      _initConsultarCarrerasProxy();
-    return consultarCarreras.servicio_consultar_usuario_fechas(f_inicio, f_fin, idUsuario);
-  }
-  
-  public java.lang.String servicio_consultar_usuario(int idUsuario) throws java.rmi.RemoteException{
-    if (consultarCarreras == null)
-      _initConsultarCarrerasProxy();
-    return consultarCarreras.servicio_consultar_usuario(idUsuario);
-  }
-  
   public java.lang.String servicio_consultar_tarifa(java.lang.String tipoTarifa) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
@@ -68,16 +56,28 @@ public class ConsultarCarrerasProxy implements com.servicios.funciones.Consultar
     return consultarCarreras.servicio_consultar_carrera(idCarrera);
   }
   
-  public java.lang.String servicio_consultar_usuario_origen_destino(java.lang.String parametro, int idUsuario) throws java.rmi.RemoteException{
+  public java.lang.String servicio_consultar_usuario(java.lang.String usuario) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
-    return consultarCarreras.servicio_consultar_usuario_origen_destino(parametro, idUsuario);
+    return consultarCarreras.servicio_consultar_usuario(usuario);
   }
   
   public java.lang.String servicio_login(java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
     if (consultarCarreras == null)
       _initConsultarCarrerasProxy();
     return consultarCarreras.servicio_login(user, contrasena);
+  }
+  
+  public java.lang.String servicio_consultar_usuario_fechas(java.lang.String f_inicio, java.lang.String f_fin, java.lang.String usuario) throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.servicio_consultar_usuario_fechas(f_inicio, f_fin, usuario);
+  }
+  
+  public java.lang.String servicio_consultar_usuario_origen_destino(java.lang.String parametro, java.lang.String usuario) throws java.rmi.RemoteException{
+    if (consultarCarreras == null)
+      _initConsultarCarrerasProxy();
+    return consultarCarreras.servicio_consultar_usuario_origen_destino(parametro, usuario);
   }
   
   

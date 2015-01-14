@@ -28,9 +28,9 @@ public class PruebadeServicio {
 			Login = pbinding.servicio_login("andrea", "1234");
 			ConsultarCarrera_idCarrera = pbinding.servicio_consultar_carrera(2);
 			ConsultarTarifa = pbinding.servicio_consultar_tarifa("Diurna");
-			ConsultarCarrera_idUsuario = pbinding.servicio_consultar_usuario(7);
-			ConsultarCarrera_Fechas = pbinding.servicio_consultar_usuario_fechas("2014-12-25", "2015-05-12",9);
-			ConsultarCarrera_OrigenDestino = pbinding.servicio_consultar_usuario_origen_destino("salinas",4);
+			ConsultarCarrera_idUsuario = pbinding.servicio_consultar_usuario("barcelona");
+			ConsultarCarrera_Fechas = pbinding.servicio_consultar_usuario_fechas("2014-12-25", "2015-05-12","barcelona");
+			ConsultarCarrera_OrigenDestino = pbinding.servicio_consultar_usuario_origen_destino("salinas","lucho");
 			System.out.println(Login);
 		    System.out.println(ConsultarCarrera_idCarrera);
 		    System.out.println(ConsultarTarifa);
