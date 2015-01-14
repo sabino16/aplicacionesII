@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -29,27 +29,27 @@
   <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
  </ns1:service>
  <ns1:service name="ConsultarCarreras" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="servicio_consultar_usuario_fechas" qname="ns1:servicio_consultar_usuario_fechas" returnQName="ns1:servicio_consultar_usuario_fechasReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
-   <ns2:parameter qname="ns1:f_inicio" type="xsd:string"/>
-   <ns2:parameter qname="ns1:f_fin" type="xsd:string"/>
-   <ns2:parameter qname="ns1:idUsuario" type="xsd:int"/>
+  <ns2:operation name="servicio_consultar_tarifa" qname="ns1:servicio_consultar_tarifa" returnQName="ns1:servicio_consultar_tarifaReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:tipoTarifa" type="xsd:string"/>
   </ns2:operation>
-  <ns1:operation name="servicio_consultar_usuario" qname="ns2:servicio_consultar_usuario" returnQName="ns2:servicio_consultar_usuarioReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns2:idUsuario" type="xsd:int"/>
+  <ns1:operation name="servicio_consultar_carrera" qname="ns2:servicio_consultar_carrera" returnQName="ns2:servicio_consultar_carreraReturn" returnType="xsd:string" soapAction="" xmlns:ns2="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:idCarrera" type="xsd:int"/>
   </ns1:operation>
-  <ns1:operation name="servicio_consultar_tarifa" qname="ns3:servicio_consultar_tarifa" returnQName="ns3:servicio_consultar_tarifaReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns3:tipoTarifa" type="xsd:string"/>
+  <ns1:operation name="servicio_consultar_usuario" qname="ns3:servicio_consultar_usuario" returnQName="ns3:servicio_consultar_usuarioReturn" returnType="xsd:string" soapAction="" xmlns:ns3="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:usuario" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="servicio_consultar_carrera" qname="ns4:servicio_consultar_carrera" returnQName="ns4:servicio_consultar_carreraReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns4:idCarrera" type="xsd:int"/>
+  <ns1:operation name="servicio_login" qname="ns4:servicio_login" returnQName="ns4:servicio_loginReturn" returnType="xsd:string" soapAction="" xmlns:ns4="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:user" type="xsd:string"/>
+   <ns1:parameter qname="ns4:contrasena" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="servicio_consultar_usuario_origen_destino" qname="ns5:servicio_consultar_usuario_origen_destino" returnQName="ns5:servicio_consultar_usuario_origen_destinoReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns5:parametro" type="xsd:string"/>
-   <ns1:parameter qname="ns5:idUsuario" type="xsd:int"/>
+  <ns1:operation name="servicio_consultar_usuario_fechas" qname="ns5:servicio_consultar_usuario_fechas" returnQName="ns5:servicio_consultar_usuario_fechasReturn" returnType="xsd:string" soapAction="" xmlns:ns5="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:f_inicio" type="xsd:string"/>
+   <ns1:parameter qname="ns5:f_fin" type="xsd:string"/>
+   <ns1:parameter qname="ns5:usuario" type="xsd:string"/>
   </ns1:operation>
-  <ns1:operation name="servicio_login" qname="ns6:servicio_login" returnQName="ns6:servicio_loginReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <ns1:parameter qname="ns6:user" type="xsd:string"/>
-   <ns1:parameter qname="ns6:contrasena" type="xsd:string"/>
+  <ns1:operation name="servicio_consultar_usuario_origen_destino" qname="ns6:servicio_consultar_usuario_origen_destino" returnQName="ns6:servicio_consultar_usuario_origen_destinoReturn" returnType="xsd:string" soapAction="" xmlns:ns6="http://funciones.servicios.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:parametro" type="xsd:string"/>
+   <ns1:parameter qname="ns6:usuario" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="servicio_consultar_usuario_fechas servicio_login servicio_consultar_usuario servicio_consultar_usuario_origen_destino servicio_consultar_tarifa servicio_consultar_carrera"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -96,11 +96,11 @@
    <ns1:parameter qname="ns10:userr" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="validacionusuario registrarusuario registrarcarrera iniciarsesion"/>
-  <ns1:parameter name="wsdlPortType" value="RegistrarCarreras"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://funciones.servicios.com"/>
-  <ns1:parameter name="wsdlServicePort" value="RegistrarCarreras"/>
+  <ns1:parameter name="wsdlPortType" value="RegistrarCarreras"/>
   <ns1:parameter name="className" value="com.servicios.funciones.RegistrarCarreras"/>
+  <ns1:parameter name="wsdlServicePort" value="RegistrarCarreras"/>
+  <ns1:parameter name="schemaQualified" value="http://funciones.servicios.com"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://funciones.servicios.com"/>
   <ns1:parameter name="wsdlServiceElement" value="RegistrarCarrerasService"/>
  </ns1:service>

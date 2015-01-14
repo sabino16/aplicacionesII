@@ -4,36 +4,6 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://funciones.servicios.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="servicio_consultar_usuario_fechas">
-    <complexType>
-     <sequence>
-      <element name="f_inicio" type="xsd:string"/>
-      <element name="f_fin" type="xsd:string"/>
-      <element name="idUsuario" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="servicio_consultar_usuario_fechasResponse">
-    <complexType>
-     <sequence>
-      <element name="servicio_consultar_usuario_fechasReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="servicio_consultar_usuario">
-    <complexType>
-     <sequence>
-      <element name="idUsuario" type="xsd:int"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="servicio_consultar_usuarioResponse">
-    <complexType>
-     <sequence>
-      <element name="servicio_consultar_usuarioReturn" type="xsd:string"/>
-     </sequence>
-    </complexType>
-   </element>
    <element name="servicio_consultar_tarifa">
     <complexType>
      <sequence>
@@ -62,18 +32,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="servicio_consultar_usuario_origen_destino">
+   <element name="servicio_consultar_usuario">
     <complexType>
      <sequence>
-      <element name="parametro" type="xsd:string"/>
-      <element name="idUsuario" type="xsd:int"/>
+      <element name="usuario" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="servicio_consultar_usuario_origen_destinoResponse">
+   <element name="servicio_consultar_usuarioResponse">
     <complexType>
      <sequence>
-      <element name="servicio_consultar_usuario_origen_destinoReturn" type="xsd:string"/>
+      <element name="servicio_consultar_usuarioReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -89,6 +58,37 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     <complexType>
      <sequence>
       <element name="servicio_loginReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_fechas">
+    <complexType>
+     <sequence>
+      <element name="f_inicio" type="xsd:string"/>
+      <element name="f_fin" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_fechasResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_usuario_fechasReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_origen_destino">
+    <complexType>
+     <sequence>
+      <element name="parametro" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="servicio_consultar_usuario_origen_destinoResponse">
+    <complexType>
+     <sequence>
+      <element name="servicio_consultar_usuario_origen_destinoReturn" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
@@ -159,14 +159,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="servicio_loginRequest">
-
-      <wsdl:part element="impl:servicio_login" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="servicio_consultar_usuario_origen_destinoRequest">
 
       <wsdl:part element="impl:servicio_consultar_usuario_origen_destino" name="parameters">
@@ -183,6 +175,14 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="servicio_loginRequest">
+
+      <wsdl:part element="impl:servicio_login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:message name="servicio_consultar_usuarioResponse">
 
       <wsdl:part element="impl:servicio_consultar_usuarioResponse" name="parameters">
@@ -192,30 +192,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
    </wsdl:message>
 
    <wsdl:portType name="ConsultarCarreras">
-
-      <wsdl:operation name="servicio_consultar_usuario_fechas">
-
-         <wsdl:input message="impl:servicio_consultar_usuario_fechasRequest" name="servicio_consultar_usuario_fechasRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:servicio_consultar_usuario_fechasResponse" name="servicio_consultar_usuario_fechasResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="servicio_consultar_usuario">
-
-         <wsdl:input message="impl:servicio_consultar_usuarioRequest" name="servicio_consultar_usuarioRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:servicio_consultar_usuarioResponse" name="servicio_consultar_usuarioResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="servicio_consultar_tarifa">
 
@@ -241,13 +217,13 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+      <wsdl:operation name="servicio_consultar_usuario">
 
-         <wsdl:input message="impl:servicio_consultar_usuario_origen_destinoRequest" name="servicio_consultar_usuario_origen_destinoRequest">
+         <wsdl:input message="impl:servicio_consultar_usuarioRequest" name="servicio_consultar_usuarioRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:servicio_consultar_usuario_origen_destinoResponse" name="servicio_consultar_usuario_origen_destinoResponse">
+         <wsdl:output message="impl:servicio_consultar_usuarioResponse" name="servicio_consultar_usuarioResponse">
 
        </wsdl:output>
 
@@ -265,47 +241,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="servicio_consultar_usuario_fechas">
+
+         <wsdl:input message="impl:servicio_consultar_usuario_fechasRequest" name="servicio_consultar_usuario_fechasRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_usuario_fechasResponse" name="servicio_consultar_usuario_fechasResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+
+         <wsdl:input message="impl:servicio_consultar_usuario_origen_destinoRequest" name="servicio_consultar_usuario_origen_destinoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:servicio_consultar_usuario_origen_destinoResponse" name="servicio_consultar_usuario_origen_destinoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="ConsultarCarrerasSoapBinding" type="impl:ConsultarCarreras">
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-
-      <wsdl:operation name="servicio_consultar_usuario_fechas">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="servicio_consultar_usuario_fechasRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="servicio_consultar_usuario_fechasResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="servicio_consultar_usuario">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="servicio_consultar_usuarioRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="servicio_consultar_usuarioResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
 
       <wsdl:operation name="servicio_consultar_tarifa">
 
@@ -343,17 +307,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+      <wsdl:operation name="servicio_consultar_usuario">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="servicio_consultar_usuario_origen_destinoRequest">
+         <wsdl:input name="servicio_consultar_usuarioRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="servicio_consultar_usuario_origen_destinoResponse">
+         <wsdl:output name="servicio_consultar_usuarioResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -372,6 +336,42 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="servicio_loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario_fechas">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_usuario_fechasRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_usuario_fechasResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="servicio_consultar_usuario_origen_destino">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="servicio_consultar_usuario_origen_destinoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="servicio_consultar_usuario_origen_destinoResponse">
 
             <wsdlsoap:body use="literal"/>
 

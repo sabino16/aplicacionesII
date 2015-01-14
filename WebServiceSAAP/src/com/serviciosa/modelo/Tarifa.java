@@ -161,6 +161,12 @@ public class Tarifa implements java.io.Serializable {
 
 	public String toJsonCDTarifa() {
 		return "{'idTarifa':" + idTarifa + ", 'tipoTarifa':'" + tipoTarifa
-				+ "', 'valor':'" + valor + "'}";
+				+ "', 'valor':'" + valor + "', 'tarifaArranque':" + tarifaArranque
+				+ ", 'costoKm':" + costoKm + ", 'costoMinEspera':" + costoMinEspera
+				+ ", 'tarifaMinima':" + tarifaMinima + ", 'velocidadCritica':"
+				+ velocidadCritica + "}";
 	}
+	
+	
+	
 }

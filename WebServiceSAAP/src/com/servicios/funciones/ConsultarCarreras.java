@@ -91,7 +91,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 	
 	
 	
-	public String servicio_consultar_usuario(int idUsuario){
+	public String servicio_consultar_usuario(String usuario){
 		//retorna lista de carreras en format json
 		
 		gh = new GeneralHome();
@@ -106,7 +106,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 		
 		String lista= "[";
 		int cont = 0;
-		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_usuario(idUsuario);
+		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_usuario(usuario);
 		Iterator iterador = ListaCarrera.listIterator();
 		while(iterador.hasNext()){
 			cont = cont + 1;
@@ -129,7 +129,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 	
 	
 	
-	public String servicio_consultar_usuario_fechas(String f_inicio, String f_fin, int idUsuario){
+	public String servicio_consultar_usuario_fechas(String f_inicio, String f_fin, String usuario){
 		//retorna lista de carreras en format json
 		
 		gh = new GeneralHome();
@@ -144,7 +144,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 		
 		String lista= "[";
 		int cont = 0;
-		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_fechas(f_inicio, f_fin, idUsuario);
+		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_fechas(f_inicio, f_fin, usuario);
 		Iterator iterador = ListaCarrera.listIterator();
 		while(iterador.hasNext()){
 			cont = cont + 1;
@@ -167,7 +167,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 	
 	
 
-	public String servicio_consultar_usuario_origen_destino(String parametro, int idUsuario){
+	public String servicio_consultar_usuario_origen_destino(String parametro, String usuario){
 		//retorna lista de carreras en format json
 		
 		gh = new GeneralHome();
@@ -182,7 +182,7 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 		
 		String lista= "[";
 		int cont = 0;
-		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_origen_destino(parametro, idUsuario);
+		ArrayList<Carrera> ListaCarrera =  (ArrayList<Carrera>) ch.Servicio_Consultar_Carrera_origen_destino(parametro, usuario);
 		Iterator iterador = ListaCarrera.listIterator();
 		while(iterador.hasNext()){
 			cont = cont + 1;
@@ -213,9 +213,9 @@ public String servicio_consultar_tarifa(String tipoTarifa){
 	      a = rc.servicio_login("andrea", "1234");
 	      b = rc.servicio_consultar_carrera(2);
 	      c = rc.servicio_consultar_tarifa("Diurna");
-	      d = rc.servicio_consultar_usuario(7);
-	      e = rc.servicio_consultar_usuario_fechas("2014-12-25", "2015-05-12",9);
-	      f = rc.servicio_consultar_usuario_origen_destino("salinas",4);
+	      d = rc.servicio_consultar_usuario("barcelona");
+	      e = rc.servicio_consultar_usuario_fechas("2014-12-25", "2015-05-12","barcelona");
+	      f = rc.servicio_consultar_usuario_origen_destino("salinas","lucho");
 	      System.out.println(a);
 	      System.out.println(b);
 	      System.out.println(c);

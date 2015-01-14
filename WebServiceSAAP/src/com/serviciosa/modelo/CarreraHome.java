@@ -92,12 +92,12 @@ public class CarreraHome {
 	}
 	
 	
-	public List<Carrera> Servicio_Consultar_Carrera_usuario(int idUsuario){
+	public List<Carrera> Servicio_Consultar_Carrera_usuario(String usuario){
 		try{
 		List<Carrera> lista;
-		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and c.usuario.idUsuario = :idUsuario";
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and c.usuario.user = :usuario";
 		
-		lista = entityManager.createQuery(sql).setParameter("idUsuario", idUsuario).getResultList();
+		lista = entityManager.createQuery(sql).setParameter("usuario", usuario).getResultList();
 		return lista;
 		}catch(RuntimeException re){
 			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
@@ -105,12 +105,12 @@ public class CarreraHome {
 		}
 	}
 	
-	public List<Carrera> Servicio_Consultar_Carrera_fechas(String f_inicio, String f_fin, int idUsuario){
+	public List<Carrera> Servicio_Consultar_Carrera_fechas(String f_inicio, String f_fin, String usuario){
 		try{
 		List<Carrera> lista;
-		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and fecha >= :f_inicio and fecha <= :f_fin  and c.usuario.idUsuario = :idUsuario";
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and fecha >= :f_inicio and fecha <= :f_fin  and c.usuario.user = :usuario";
 		
-		lista = entityManager.createQuery(sql).setParameter("f_inicio", f_inicio).setParameter("f_fin", f_fin).setParameter("idUsuario", idUsuario).getResultList();
+		lista = entityManager.createQuery(sql).setParameter("f_inicio", f_inicio).setParameter("f_fin", f_fin).setParameter("usuario", usuario).getResultList();
 		return lista;
 		}catch(RuntimeException re){
 			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
@@ -119,12 +119,12 @@ public class CarreraHome {
 	}
 	
 	
-	public List<Carrera> Servicio_Consultar_Carrera_origen_destino(String parametro, int idUsuario){
+	public List<Carrera> Servicio_Consultar_Carrera_origen_destino(String parametro, String usuario){
 		try{
 		List<Carrera> lista;
-		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and (c.origen like :parametro or c.destino like :parametro)  and c.usuario.idUsuario = :idUsuario";
+		String sql = "select c from Carrera c, Usuario u, Tarifa t where c.usuario.idUsuario = u.idUsuario and c.tarifa.idTarifa = t.idTarifa and u.estado='1' and c.estado='1' and t.estado='1' and (c.origen like :parametro or c.destino like :parametro)  and c.usuario.user = :usuario";
 		
-		lista = entityManager.createQuery(sql).setParameter("parametro", "%"+parametro+"%").setParameter("idUsuario", idUsuario).getResultList();
+		lista = entityManager.createQuery(sql).setParameter("parametro", "%"+parametro+"%").setParameter("usuario", usuario).getResultList();
 		return lista;
 		}catch(RuntimeException re){
 			log.error("Error en filtrarUsuario: CarreraHome" + re.getMessage());
