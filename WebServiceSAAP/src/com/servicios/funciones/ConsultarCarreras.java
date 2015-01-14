@@ -5,19 +5,19 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.google.gson.*;
+import com.serviciosa.modelo.Carrera;
+import com.serviciosa.modelo.CarreraHome;
+import com.serviciosa.modelo.GeneralHome;
+import com.serviciosa.modelo.Tarifa;
+import com.serviciosa.modelo.TarifaHome;
+import com.serviciosa.modelo.TipoUsuario;
+import com.serviciosa.modelo.TipoUsuarioHome;
+import com.serviciosa.modelo.Usuario;
+import com.serviciosa.modelo.UsuarioHome;
 
 import javax.persistence.EntityManager;
 
 
-import com.servicios.modelo.Carrera;
-import com.servicios.modelo.CarreraHome;
-import com.servicios.modelo.GeneralHome;
-import com.servicios.modelo.Tarifa;
-import com.servicios.modelo.TarifaHome;
-import com.servicios.modelo.TipoUsuario;
-import com.servicios.modelo.TipoUsuarioHome;
-import com.servicios.modelo.Usuario;
-import com.servicios.modelo.UsuarioHome;
 public class ConsultarCarreras {
 	GeneralHome gh;
 	EntityManager em;

@@ -14,9 +14,9 @@ import org.zkoss.zul.Doublebox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 
-import com.aplicaciones.modelo.Carrera;
-import com.aplicaciones.modelo.GeneralHome;
-import com.aplicaciones.modelo.Usuario;
+import com.aplicacionesa.modelo.Carrera;
+import com.aplicacionesa.modelo.GeneralHome;
+
 
 public class VisualizarDatosCarreras extends GenericForwardComposer<Component> {
 

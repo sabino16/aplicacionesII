@@ -14,10 +14,9 @@ import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
 
-import com.aplicaciones.modelo.Carrera;
-import com.aplicaciones.modelo.CarreraHome;
-import com.aplicaciones.modelo.GeneralHome;
-
+import com.aplicacionesa.modelo.Carrera;
+import com.aplicacionesa.modelo.CarreraHome;
+import com.aplicacionesa.modelo.GeneralHome;
 
 
 

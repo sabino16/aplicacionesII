@@ -8,15 +8,18 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 
-import com.servicios.modelo.Carrera;
-import com.servicios.modelo.CarreraHome;
-import com.servicios.modelo.GeneralHome;
-import com.servicios.modelo.Tarifa;
-import com.servicios.modelo.TarifaHome;
-import com.servicios.modelo.TipoUsuario;
-import com.servicios.modelo.TipoUsuarioHome;
-import com.servicios.modelo.Usuario;
-import com.servicios.modelo.UsuarioHome;
+
+import com.serviciosa.modelo.Carrera;
+import com.serviciosa.modelo.CarreraHome;
+import com.serviciosa.modelo.GeneralHome;
+import com.serviciosa.modelo.Tarifa;
+import com.serviciosa.modelo.TarifaHome;
+import com.serviciosa.modelo.TipoUsuario;
+import com.serviciosa.modelo.TipoUsuarioHome;
+import com.serviciosa.modelo.Usuario;
+import com.serviciosa.modelo.UsuarioHome;
+
+
 
 
 
@@ -52,6 +55,7 @@ public class RegistrarCarreras {
 		if(usuario.isEmpty()){
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
+			//
 			return 1;
 			
 		}

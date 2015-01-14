@@ -17,10 +17,11 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 
-import com.aplicaciones.modelo.Carrera;
-import com.aplicaciones.modelo.GeneralHome;
-import com.aplicaciones.modelo.Usuario;
-import com.aplicaciones.modelo.UsuarioHome;
+import com.aplicacionesa.modelo.GeneralHome;
+import com.aplicacionesa.modelo.Usuario;
+import com.aplicacionesa.modelo.UsuarioHome;
+
+
 
 public class ListaGeneralPasajerosControlador extends GenericForwardComposer<Component> {
 	

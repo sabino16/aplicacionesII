@@ -17,8 +17,8 @@ import org.zkoss.zul.Menuitem;
 import org.zkoss.zul.Menupopup;
 import org.zkoss.zul.Window;
 
+import com.aplicacionesa.modelo.Usuario;
 
-import com.aplicaciones.modelo.Usuario;
 
 public class IndexControlador extends GenericForwardComposer<Component> {
 	

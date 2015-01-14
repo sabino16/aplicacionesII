@@ -20,11 +20,12 @@ import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 
-import com.aplicaciones.modelo.GeneralHome;
-import com.aplicaciones.modelo.TipoUsuario;
-import com.aplicaciones.modelo.TipoUsuarioHome;
-import com.aplicaciones.modelo.Usuario;
-import com.aplicaciones.modelo.UsuarioHome;
+import com.aplicacionesa.modelo.GeneralHome;
+import com.aplicacionesa.modelo.TipoUsuario;
+import com.aplicacionesa.modelo.TipoUsuarioHome;
+import com.aplicacionesa.modelo.Usuario;
+import com.aplicacionesa.modelo.UsuarioHome;
+
 
 
 public class UsuarioControlador extends GenericForwardComposer<Component>{

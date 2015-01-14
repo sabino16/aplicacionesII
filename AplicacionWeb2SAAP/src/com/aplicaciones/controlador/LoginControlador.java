@@ -13,9 +13,10 @@ import org.zkoss.zul.Button;
 import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
 
-import com.aplicaciones.modelo.GeneralHome;
-import com.aplicaciones.modelo.Usuario;
-import com.aplicaciones.modelo.UsuarioHome;
+import com.aplicacionesa.modelo.GeneralHome;
+import com.aplicacionesa.modelo.Usuario;
+import com.aplicacionesa.modelo.UsuarioHome;
+
 
 
 public class LoginControlador extends GenericForwardComposer<Component>{
