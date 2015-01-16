@@ -1,0 +1,45 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="REPORTE" border="none" apply="com.aplicaciones.controlador.ReporteValorControlador" 
+id="WinReportevalor" contentStyle="overflow:auto">
+
+<listbox id="lista_GeneralReporte" mold="paging" pageSize="3"
+		multiple="false" width="100%"
+		emptyMessage="No existen carreras con los valores ingresados">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Valor de Carreras por Usuario" colspan="2"
+				rowspan="1" />
+		</auxhead>
+		<auxhead sclass="category-center">
+			<auxheader colspan="1" rowspan="1">
+				<label value="Escoja un rango de fechas:"/>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<datebox id="calendar_fecha1"/>
+			</auxheader>
+			
+			<auxheader colspan="1" rowspan="1">
+				<datebox id="calendar_fecha2"/>
+			</auxheader>
+			
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Nombre" sort="auto(nombre)"/>
+			<listheader label="Apellido" sort="auto(apellido)"/>
+			<listheader label="Valor" sort="auto(valor_total)"/>
+			
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.nombre} " />
+				<listcell label="${each.apellido} " />
+				<listcell label="${each.valor_total} " />
+			</listitem>
+		</template>
+	</listbox>
+
+</window>
+</zk>
