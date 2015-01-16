@@ -1,7 +1,9 @@
 <?page title="Lista General Pasajeros Carrera" contentType="text/html;charset=UTF-8"?>
 
 <zk>
-<window title="LISTA GENERAL DE CARRERAS" border="normal" id="WinListaCarreras" apply="com.aplicaciones.controlador.ListaGeneralPasajeroCarreraControlador">
+<window title="LISTA GENERAL DE CARRERAS" border="none" id="WinListaCarreras" 
+apply="com.aplicaciones.controlador.ListaGeneralPasajeroCarreraControlador"
+contentStyle="overflow:auto">
 
 <listbox id="lista_General_Pasajero_Carrera" mold="paging" pageSize="5"
 		multiple="false" width="100%"

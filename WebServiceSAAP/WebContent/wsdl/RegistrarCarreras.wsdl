@@ -4,44 +4,17 @@
 Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://funciones.servicios.com" xmlns="http://www.w3.org/2001/XMLSchema">
-   <element name="iniciarsesion">
+   <element name="validacionusuario">
     <complexType>
      <sequence>
-      <element name="user" type="xsd:string"/>
-      <element name="contrasena" type="xsd:string"/>
+      <element name="userr" type="xsd:string"/>
      </sequence>
     </complexType>
    </element>
-   <element name="iniciarsesionResponse">
+   <element name="validacionusuarioResponse">
     <complexType>
      <sequence>
-      <element name="iniciarsesionReturn" type="xsd:boolean"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="registrarcarrera">
-    <complexType>
-     <sequence>
-      <element name="id_tarifa" type="xsd:int"/>
-      <element name="user" type="xsd:string"/>
-      <element name="contrasena" type="xsd:string"/>
-      <element name="origen" type="xsd:string"/>
-      <element name="destino" type="xsd:string"/>
-      <element name="tiempo" type="xsd:string"/>
-      <element name="km_recorridos" type="xsd:double"/>
-      <element name="precio" type="xsd:double"/>
-      <element name="fecha" type="xsd:string"/>
-      <element name="latitud_origen" type="xsd:double"/>
-      <element name="longitud_origen" type="xsd:double"/>
-      <element name="latitud_destino" type="xsd:double"/>
-      <element name="longitud_destino" type="xsd:double"/>
-     </sequence>
-    </complexType>
-   </element>
-   <element name="registrarcarreraResponse">
-    <complexType>
-     <sequence>
-      <element name="registrarcarreraReturn" type="xsd:int"/>
+      <element name="validacionusuarioReturn" type="xsd:boolean"/>
      </sequence>
     </complexType>
    </element>
@@ -64,17 +37,43 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
-   <element name="validacionusuario">
+   <element name="registrarcarrera">
     <complexType>
      <sequence>
-      <element name="userr" type="xsd:string"/>
+      <element name="id_tarifa" type="xsd:int"/>
+      <element name="user" type="xsd:string"/>
+      <element name="origen" type="xsd:string"/>
+      <element name="destino" type="xsd:string"/>
+      <element name="tiempo" type="xsd:string"/>
+      <element name="km_recorridos" type="xsd:double"/>
+      <element name="precio" type="xsd:double"/>
+      <element name="fecha" type="xsd:string"/>
+      <element name="latitud_origen" type="xsd:double"/>
+      <element name="longitud_origen" type="xsd:double"/>
+      <element name="latitud_destino" type="xsd:double"/>
+      <element name="longitud_destino" type="xsd:double"/>
      </sequence>
     </complexType>
    </element>
-   <element name="validacionusuarioResponse">
+   <element name="registrarcarreraResponse">
     <complexType>
      <sequence>
-      <element name="validacionusuarioReturn" type="xsd:boolean"/>
+      <element name="registrarcarreraReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="iniciarsesion">
+    <complexType>
+     <sequence>
+      <element name="user" type="xsd:string"/>
+      <element name="contrasena" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="iniciarsesionResponse">
+    <complexType>
+     <sequence>
+      <element name="iniciarsesionReturn" type="xsd:boolean"/>
      </sequence>
     </complexType>
    </element>
@@ -89,14 +88,6 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="registrarusuarioResponse">
-
-      <wsdl:part element="impl:registrarusuarioResponse" name="parameters">
-
-      </wsdl:part>
-
-   </wsdl:message>
-
    <wsdl:message name="registrarcarreraResponse">
 
       <wsdl:part element="impl:registrarcarreraResponse" name="parameters">
@@ -105,9 +96,9 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="registrarusuarioRequest">
+   <wsdl:message name="registrarusuarioResponse">
 
-      <wsdl:part element="impl:registrarusuario" name="parameters">
+      <wsdl:part element="impl:registrarusuarioResponse" name="parameters">
 
       </wsdl:part>
 
@@ -121,17 +112,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
-   <wsdl:message name="validacionusuarioRequest">
+   <wsdl:message name="registrarusuarioRequest">
 
-      <wsdl:part element="impl:validacionusuario" name="parameters">
+      <wsdl:part element="impl:registrarusuario" name="parameters">
 
       </wsdl:part>
 
    </wsdl:message>
 
-   <wsdl:message name="validacionusuarioResponse">
+   <wsdl:message name="validacionusuarioRequest">
 
-      <wsdl:part element="impl:validacionusuarioResponse" name="parameters">
+      <wsdl:part element="impl:validacionusuario" name="parameters">
 
       </wsdl:part>
 
@@ -145,27 +136,23 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
    </wsdl:message>
 
+   <wsdl:message name="validacionusuarioResponse">
+
+      <wsdl:part element="impl:validacionusuarioResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
    <wsdl:portType name="RegistrarCarreras">
 
-      <wsdl:operation name="iniciarsesion">
+      <wsdl:operation name="validacionusuario">
 
-         <wsdl:input message="impl:iniciarsesionRequest" name="iniciarsesionRequest">
-
-       </wsdl:input>
-
-         <wsdl:output message="impl:iniciarsesionResponse" name="iniciarsesionResponse">
-
-       </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="registrarcarrera">
-
-         <wsdl:input message="impl:registrarcarreraRequest" name="registrarcarreraRequest">
+         <wsdl:input message="impl:validacionusuarioRequest" name="validacionusuarioRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:registrarcarreraResponse" name="registrarcarreraResponse">
+         <wsdl:output message="impl:validacionusuarioResponse" name="validacionusuarioResponse">
 
        </wsdl:output>
 
@@ -183,13 +170,25 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="validacionusuario">
+      <wsdl:operation name="registrarcarrera">
 
-         <wsdl:input message="impl:validacionusuarioRequest" name="validacionusuarioRequest">
+         <wsdl:input message="impl:registrarcarreraRequest" name="registrarcarreraRequest">
 
        </wsdl:input>
 
-         <wsdl:output message="impl:validacionusuarioResponse" name="validacionusuarioResponse">
+         <wsdl:output message="impl:registrarcarreraResponse" name="registrarcarreraResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="iniciarsesion">
+
+         <wsdl:input message="impl:iniciarsesionRequest" name="iniciarsesionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:iniciarsesionResponse" name="iniciarsesionResponse">
 
        </wsdl:output>
 
@@ -201,35 +200,17 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-      <wsdl:operation name="iniciarsesion">
+      <wsdl:operation name="validacionusuario">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="iniciarsesionRequest">
+         <wsdl:input name="validacionusuarioRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="iniciarsesionResponse">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:output>
-
-      </wsdl:operation>
-
-      <wsdl:operation name="registrarcarrera">
-
-         <wsdlsoap:operation soapAction=""/>
-
-         <wsdl:input name="registrarcarreraRequest">
-
-            <wsdlsoap:body use="literal"/>
-
-         </wsdl:input>
-
-         <wsdl:output name="registrarcarreraResponse">
+         <wsdl:output name="validacionusuarioResponse">
 
             <wsdlsoap:body use="literal"/>
 
@@ -255,17 +236,35 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
-      <wsdl:operation name="validacionusuario">
+      <wsdl:operation name="registrarcarrera">
 
          <wsdlsoap:operation soapAction=""/>
 
-         <wsdl:input name="validacionusuarioRequest">
+         <wsdl:input name="registrarcarreraRequest">
 
             <wsdlsoap:body use="literal"/>
 
          </wsdl:input>
 
-         <wsdl:output name="validacionusuarioResponse">
+         <wsdl:output name="registrarcarreraResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="iniciarsesion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="iniciarsesionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="iniciarsesionResponse">
 
             <wsdlsoap:body use="literal"/>
 

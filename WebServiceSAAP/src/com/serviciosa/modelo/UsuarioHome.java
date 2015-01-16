@@ -95,15 +95,14 @@ public class UsuarioHome {
 	}
 	
 	
-	public List<Usuario> iniciarsesion(String user, String contrasena){
+	public List<Usuario> iniciarsesion(String user){
 		try{
 		List<Usuario> usuario;
 		String sql = "select u from Usuario as u "+ 
-			      "where u.user = :userr and u.pass = :passs and"+
+			      "where u.user = :userr and"+
 			      " u.estado='1' and u.tipoUsuario.idTipousuario = 1";  
 	
 		usuario = entityManager.createQuery(sql).setParameter("userr", user)
-														.setParameter("passs", contrasena)
 							.getResultList();
 		return usuario;
 		}catch(RuntimeException re){

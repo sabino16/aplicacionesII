@@ -1,6 +1,7 @@
 <?page title="new page title" contentType="text/html;charset=UTF-8"?>
 
-<window title="LISTA GENERAL DE CARRERAS" border="normal" id="WinListaCarreras" apply="com.aplicaciones.controlador.ListaGeneralCarreraControlador">
+<window title="LISTA GENERAL DE CARRERAS" border="none" id="WinListaCarreras" 
+apply="com.aplicaciones.controlador.ListaGeneralCarreraControlador" contentStyle="overflow:auto">
 
 <listbox id="lista_GeneralCarrera" mold="paging" pageSize="3"
 		multiple="false" width="100%"

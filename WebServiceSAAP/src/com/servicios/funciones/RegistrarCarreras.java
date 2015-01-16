@@ -5,10 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.EntityManager;
-
-
 import com.serviciosa.modelo.Carrera;
 import com.serviciosa.modelo.CarreraHome;
 import com.serviciosa.modelo.GeneralHome;
@@ -19,17 +16,12 @@ import com.serviciosa.modelo.TipoUsuarioHome;
 import com.serviciosa.modelo.Usuario;
 import com.serviciosa.modelo.UsuarioHome;
 
-
-
-
-
-
 //Borrar clases generadas
 
 public class RegistrarCarreras {
 	GeneralHome gh;
 	EntityManager em;
-	public int registrarcarrera(int id_tarifa, String user, String contrasena, 
+	public int registrarcarrera(int id_tarifa, String user, 
 			String origen, String destino, String tiempo, double km_recorridos, double precio,
 			String fecha, double latitud_origen, double longitud_origen, double latitud_destino, double longitud_destino)
 	{
@@ -45,7 +37,7 @@ public class RegistrarCarreras {
 			uh.setEntityManager(em);
 			Tarifa tarifa = tth.findById(id_tarifa);
 			em.getTransaction().begin();
-			List<Usuario> usuario = uh.iniciarsesion(user, contrasena);
+			List<Usuario> usuario = uh.iniciarsesion(user);
 			Date date = null;
 		    String expectedPattern = "MM/dd/yyyy";
 		    SimpleDateFormat formatter = new SimpleDateFormat(expectedPattern);
@@ -119,7 +111,7 @@ public class RegistrarCarreras {
 			uh.setEntityManager(em);
 			
 			em.getTransaction().begin();
-			List<Usuario>  usuario = uh.iniciarsesion(user, contrasena);
+			List<Usuario>  usuario = uh.iniciarsesion(user);
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
 			if(usuario.isEmpty()){

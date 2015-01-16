@@ -22,7 +22,7 @@ import com.servicios.funciones.RegistrarCarrerasSoapBindingStub;
 public class RegistrarCarreraControlador extends GenericForwardComposer<Component>{
 
 	Textbox textbox_pasajero,textbox_origen,textbox_destino,textbox_tiempo;
-	Textbox textbox_usuario,textbox_contrasena;
+	Textbox textbox_usuario;
 	Doublebox textbox_precio,textbox_velocidad, textbox_latitud_origen, textbox_longitud_origen,
 	textbox_latitud_destino, textbox_longitud_destino;
 	Datebox datebox_Inicio;
@@ -44,13 +44,12 @@ public class RegistrarCarreraControlador extends GenericForwardComposer<Componen
 			//String fecha = datebox_Inicio.getValue().toString();
 			String fecha = "1/1/2014";
 			String usuario = textbox_usuario.getValue();
-			String contrasena= textbox_contrasena.getValue();
 			Double latitud_origen= textbox_latitud_origen.getValue();
 			Double longitud_origen= textbox_longitud_origen.getValue();
 			Double latitud_destino= textbox_latitud_destino.getValue();
 			Double longitud_destino= textbox_longitud_destino.getValue();
 			
-			RegistroCarrera = pbinding.registrarcarrera(1, usuario, contrasena, origen, destino, tiempo, kilometros, precio, fecha, latitud_origen, longitud_origen, latitud_destino, longitud_destino);
+			RegistroCarrera = pbinding.registrarcarrera(1, usuario, origen, destino, tiempo, kilometros, precio, fecha, latitud_origen, longitud_origen, latitud_destino, longitud_destino);
 		
 			alert("" + RegistroCarrera);
 			

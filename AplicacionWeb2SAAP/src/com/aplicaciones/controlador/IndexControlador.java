@@ -24,6 +24,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	
 	Menu menuUsuarios;
 	Menu menuCarreras;
+	Menu menuConsultas;
 	Menu menuReportes;
 	
 	Menuitem menuitemUIngresar;
@@ -33,6 +34,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	Menuitem menuitemCVisualizar;
 	Menuitem menuitemRCarreras;
 	Menuitem menuitemRPasajeros;
+	Menuitem menuitemRRCarrerasFechas;
 	
 	@Wire
 	Button btnIniciararSesion, btnCerrarSesion;
@@ -82,6 +84,11 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		barraMenu.appendChild(menuCarreras);
 		
 		
+		menuConsultas = new Menu("Consultas");
+		Menupopup menuconsulta = new Menupopup();
+		menuConsultas.setVisible(false);
+		
+		
 		menuReportes = new Menu("Reportes");
 		Menupopup menuReporte = new Menupopup();
 		menuReportes.setVisible(false);
@@ -96,11 +103,20 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		menuitemRPasajeros.setValue("Reportes/Lista_GeneralPasajeros.zul");
 		menuitemRPasajeros.addEventListener("onClick", new MenuListener());
 		
-		menuReporte.appendChild(menuitemRCarreras);
-		menuReporte.appendChild(menuitemRPasajeros);
+		menuitemRRCarrerasFechas = new Menuitem("Valor de las carreras por Rango de fechas");
+		menuitemRRCarrerasFechas.setVisible(false);
+		menuitemRRCarrerasFechas.setValue("Reportes/Reporte_Valor_Carrera.zul");
+		menuitemRRCarrerasFechas.addEventListener("onClick", new MenuListener());
+		
+		
+		menuconsulta.appendChild(menuitemRCarreras);
+		menuconsulta.appendChild(menuitemRPasajeros);
+		menuReporte.appendChild(menuitemRRCarrerasFechas);
 		
 		menuReportes.appendChild(menuReporte);
+		menuConsultas.appendChild(menuconsulta);
 		barraMenu.appendChild(menuReportes);
+		barraMenu.appendChild(menuConsultas);
 		
 	}
 	
@@ -123,6 +139,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				Session session;
 				session=Sessions.getCurrent();
 				session.setAttribute("accion", s);
+				
 				
 				Window win = (Window)Executions.createComponents(pagina, centro, null);
 				
@@ -150,6 +167,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				lblNombre.setValue("NOMBRE: "+ user.getNombre()+" "+user.getApellido());
 				menuUsuarios.setVisible(true);
 				menuCarreras.setVisible(true);
+				menuConsultas.setVisible(true);
 				menuReportes.setVisible(true);
 				menuitemUIngresar.setVisible(true);
 				menuitemUEditar.setVisible(true);
@@ -158,12 +176,14 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				menuitemCVisualizar.setVisible(true);
 				menuitemRCarreras.setVisible(true);
 				menuitemRPasajeros.setVisible(true);
+				menuitemRRCarrerasFechas.setVisible(true);
 				
 		}else{
 			lblUsuario.setValue(" ");
 			lblNombre.setValue(" ");
 			menuUsuarios.setVisible(false);
 			menuCarreras.setVisible(false);
+			menuConsultas.setVisible(false);
 			menuReportes.setVisible(false);
 			menuitemUIngresar.setVisible(false);
 			menuitemUEditar.setVisible(false);
@@ -172,6 +192,7 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 			menuitemCVisualizar.setVisible(false);
 			menuitemRCarreras.setVisible(false);
 			menuitemRPasajeros.setVisible(false);
+			menuitemRRCarrerasFechas.setVisible(false);
 			btnIniciararSesion.setVisible(true);
 			btnCerrarSesion.setVisible(false);
 			}

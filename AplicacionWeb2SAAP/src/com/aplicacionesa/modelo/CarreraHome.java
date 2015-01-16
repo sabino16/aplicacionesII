@@ -2,6 +2,7 @@ package com.aplicacionesa.modelo;
 
 // Generated 14/01/2015 09:20:48 AM by Hibernate Tools 3.4.0.CR1
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -428,5 +429,64 @@ public List<Carrera> findAllIdUsuario(int IdUsuario) { //DEVUELVE UNA LISTA DE C
 			return null;
 		}
 	}
+	
+	public List<Reporte_valor_Carrera> listar_reporte(Date fechainicial, Date fechafinal){
+		try{
+		
+		List<Object[]> lista;
+		String sql = "select c.usuario.idUsuario, c.usuario.nombre, c.usuario.apellido, sum(c.precio) as valor_total from Carrera as c where c.estado = '1' and " +
+				"(c.fecha between :criterio1 and :criterio2) group by c.usuario.idUsuario";
+		lista = getEntityManager().createQuery(sql).setParameter("criterio1", fechainicial)
+													.setParameter("criterio2", fechafinal)
+													.getResultList();
+		System.out.println(fechainicial);
+		System.out.println(fechafinal);
+		
+		System.out.println(lista.size());
+		
+		//System.out.println(lista.s);
+		if(lista!=null){
+			ArrayList<Reporte_valor_Carrera> lista2 = new ArrayList<Reporte_valor_Carrera>();
+			for (int i=0; i<lista.size(); i++){
+				Reporte_valor_Carrera reporte = new Reporte_valor_Carrera();
+				Object[] obj =lista.get(i);
+				reporte.setIdUsuario((Integer)obj[0]);
+				reporte.setNombre(obj[1].toString());
+				reporte.setApellido(obj[2].toString());
+				reporte.setValor_total((Double)obj[3]);
+				lista2.add(reporte);
+			}
+			return lista2;
+		}
+			else{
+				return null;
+			}
+		
+		//Object[] obj =lista.get(0);
+		//System.out.println(obj[0] + " " + obj[1] + " " + obj[2]);
+		
+		}catch(RuntimeException re){
+			log.error("error en listar reporte" +re.getMessage());
+			return null;
+		}
+	}
 
+	
+	public List<Carrera> MostrarDetalleCarreraPorValor(Integer IdUsuario, Date Fecha1, Date Fecha2){
+		try{
+		List<Carrera> lista;
+		String sql = "select c from Carrera as c where c.estado = '1' and (c.usuario.idUsuario = :criterio1 and " +
+				"c.fecha between :criterio2 and :criterio3)";
+		lista = getEntityManager().createQuery(sql).setParameter("criterio1",IdUsuario)
+													.setParameter("criterio2",Fecha1)
+													.setParameter("criterio3",Fecha2)
+													.getResultList();
+		
+		return lista;
+		}catch(RuntimeException re){
+			log.error("error en Mostrar Detalle de la Carrera" +re.getMessage());
+			return null;
+		}
+	}
+	
 }

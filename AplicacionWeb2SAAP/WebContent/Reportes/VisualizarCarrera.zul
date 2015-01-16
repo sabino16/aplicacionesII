@@ -1,6 +1,8 @@
 <?page title="Visualizar Carreras" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="DATOS DE LA CARRERA" border="normal" id="WinVisualizarCarreras" apply="com.aplicaciones.controlador.VisualizarDatosCarreras">
+<window title="DATOS DE LA CARRERA" border="none" id="WinVisualizarCarreras" 
+apply="com.aplicaciones.controlador.VisualizarDatosCarreras" contentStyle="overflow:auto"
+mode="modal" width="80%" height="80%" closable="true">
 
 <separator></separator>
 	<separator></separator>
@@ -10,54 +12,54 @@
 			
 				<row>
 					<label value="Apellidos:" />
-					<textbox id="textbox_apellidos"  width="80%" disabled="true"/>
+					<label id="lbl_apellidos" value=""/>
 				</row>
 				<row>
 					<label value="Nombres:" />
-					<textbox id="textbox_nombres"  width="80%" disabled="true"/>
+					<label id="lbl_nombres" value=""/>
 				</row>
 				
 				<row>
 					<label value="Tipo de Tarifa:" />
-					<textbox id="textbox_tarifa" width="80%" disabled="true"/>
+					<label id="lbl_tarifa" value=""/>
 				</row>
 				
 				<row>
 					<label value="Origen:" />
-					<textbox id="textbox_origen"  width="80%" disabled="true"/>
+					<label id="lbl_origen" value=""/>
 				</row>
 				
 				<row>
 					<label value="Destino" />
-					<textbox id="textbox_destino"  width="80%" disabled="true"/>
+					<label id="lbl_destino" value=""/>
 				</row>
 				
 				<row>
 					<label value="Tiempo:" />
-					<textbox id="textbox_tiempo"  width="80%" disabled="true"/>
+					<label id="lbl_tiempo" value=""/>
 				</row>
 				
 				<row>
 					<label value="Km_recorridos:" />
-					<doublebox id="textbox_KM_recorridos"  width="80%" disabled="true"/>
+					<label id="lbl_KM_recorridos" value=""/>
 				</row>
 				
 				<row>
 					<label value="Precio:" />
-					<doublebox id="textbox_precio"  width="80%" disabled="true"/>
+					<label id="lbl_precio" value=""/>
 				</row>
 				
 				<row>
 					<label value="Fecha:" />
-					<textbox id="textbox_fecha"  width="80%" disabled="true"/>
+					<label id="lbl_fecha" value=""/>
 				</row>
 				<row>
 					<label value="Coordenadas Origen:" />
-					<doublebox id="textbox_coord_Origen"  width="80%" disabled="true"/>
+					<label id="lbl_coord_Origen" value=""/>
 				</row>
 				<row>
 					<label value="Coordenadas Destino:" />
-					<doublebox id="textbox_coord_destino"  width="80%" disabled="true"/>
+					<label id="lbl_coord_destino" value=""/>
 				</row>
 				
 			</rows>

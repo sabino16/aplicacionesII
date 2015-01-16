@@ -1,7 +1,8 @@
 <?page title="Lista Pasajeros" contentType="text/html;charset=UTF-8"?>
 <zk>
 
-<window title="Lista Pasajeros" border="normal" height="100%" id="WinListaPasajeros" apply="com.aplicaciones.controlador.ListaGeneralPasajerosControlador" >
+<window title="Lista Pasajeros" border="none" height="100%" id="WinListaPasajeros" 
+apply="com.aplicaciones.controlador.ListaGeneralPasajerosControlador" contentStyle="overflow:auto">
 <listbox id="listaPasajeros" mold="paging" pageSize="5"
 		multiple="false" width="100%"
 		emptyMessage="No se encuentra una lista de pasajeros">

@@ -23,24 +23,24 @@
       <operation name="servicio_consultar_tarifa" qname="operNS:servicio_consultar_tarifa" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_tarifaReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:tipoTarifa" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="servicio_consultar_carrera" qname="operNS:servicio_consultar_carrera" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_carreraReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:idCarrera" xmlns:pns="http://funciones.servicios.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-      </operation>
       <operation name="servicio_consultar_usuario" qname="operNS:servicio_consultar_usuario" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_usuarioReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:usuario" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="servicio_login" qname="operNS:servicio_login" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_loginReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:user" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:contrasena" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="servicio_consultar_carrera" qname="operNS:servicio_consultar_carrera" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_carreraReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:idCarrera" xmlns:pns="http://funciones.servicios.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="servicio_consultar_usuario_origen_destino" qname="operNS:servicio_consultar_usuario_origen_destino" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_usuario_origen_destinoReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:parametro" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:usuario" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <operation name="servicio_consultar_usuario_fechas" qname="operNS:servicio_consultar_usuario_fechas" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_usuario_fechasReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:f_inicio" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:f_fin" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:usuario" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <operation name="servicio_consultar_usuario_origen_destino" qname="operNS:servicio_consultar_usuario_origen_destino" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_consultar_usuario_origen_destinoReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
-        <parameter qname="pns:parametro" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
-        <parameter qname="pns:usuario" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      <operation name="servicio_login" qname="operNS:servicio_login" xmlns:operNS="http://funciones.servicios.com" returnQName="retNS:servicio_loginReturn" xmlns:retNS="http://funciones.servicios.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:user" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:contrasena" xmlns:pns="http://funciones.servicios.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="servicio_consultar_usuario_fechas servicio_login servicio_consultar_usuario servicio_consultar_usuario_origen_destino servicio_consultar_tarifa servicio_consultar_carrera"/>
 

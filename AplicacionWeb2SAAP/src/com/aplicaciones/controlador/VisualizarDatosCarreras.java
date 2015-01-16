@@ -11,6 +11,7 @@ import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Combobox;
 import org.zkoss.zul.Doublebox;
+import org.zkoss.zul.Label;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Window;
 
@@ -28,9 +29,10 @@ public class VisualizarDatosCarreras extends GenericForwardComposer<Component> {
 	
 	
 	@Wire
-	Textbox textbox_apellidos,textbox_nombres,textbox_tarifa,
-	textbox_origen,textbox_destino,textbox_tiempo,textbox_fecha;
-	Doublebox textbox_KM_recorridos,textbox_precio,textbox_coord_Origen,textbox_coord_destino;
+	
+	Label lbl_apellidos,lbl_nombres,lbl_tarifa,
+	lbl_origen,lbl_destino,lbl_tiempo,lbl_fecha,
+	lbl_KM_recorridos,lbl_precio,lbl_coord_Origen,lbl_coord_destino;
 	Window WinVisualizarCarreras;
 	
 	
@@ -46,18 +48,18 @@ public class VisualizarDatosCarreras extends GenericForwardComposer<Component> {
 		carrera= (Carrera)session.getAttribute("CarreraSeleccionada");
 		
 		if(carrera!=null){
-			//cargar datos en el formulario mediante la session
-			textbox_apellidos.setValue(carrera.getUsuario().getApellido().toString());
-			textbox_nombres.setValue(carrera.getUsuario().getNombre().toString());
-			textbox_tarifa.setValue(carrera.getTarifa().toString());
-			textbox_origen.setValue(carrera.getOrigen().toString());
-			textbox_destino.setValue(carrera.getDestino().toString());
-			textbox_tiempo.setValue(carrera.getTiempo().toString());
-			textbox_fecha.setValue(carrera.getFecha().toString());
-			textbox_KM_recorridos.setValue(carrera.getKmRecorridos());
-			textbox_precio.setValue(carrera.getPrecio());
-			
-			
+			//cargar datos en el formulario mediante la session	
+			lbl_apellidos.setValue(carrera.getUsuario().getApellido().toString());
+			lbl_nombres.setValue(carrera.getUsuario().getNombre().toString());
+			lbl_tarifa.setValue(carrera.getTarifa().getTipoTarifa());
+			lbl_origen.setValue(carrera.getOrigen().toString());
+			lbl_destino.setValue(carrera.getDestino().toString());
+			lbl_tiempo.setValue(carrera.getTiempo().toString());
+			lbl_fecha.setValue(carrera.getFecha().toString());
+			lbl_KM_recorridos.setValue(""+carrera.getKmRecorridos());
+			lbl_precio.setValue(""+carrera.getPrecio());
+			lbl_coord_Origen.setValue("lat="+carrera.getLatitudOrigen() +"  long="+carrera.getLongitudOrigen());
+			lbl_coord_destino.setValue("lat="+carrera.getLatitudDestino() +"  long="+carrera.getLongitudDestino());
 		}
 	}
 

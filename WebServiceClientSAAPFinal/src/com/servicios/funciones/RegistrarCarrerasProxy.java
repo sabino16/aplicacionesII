@@ -44,16 +44,10 @@ public class RegistrarCarrerasProxy implements com.servicios.funciones.Registrar
     return registrarCarreras;
   }
   
-  public boolean iniciarsesion(java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
+  public boolean validacionusuario(java.lang.String userr) throws java.rmi.RemoteException{
     if (registrarCarreras == null)
       _initRegistrarCarrerasProxy();
-    return registrarCarreras.iniciarsesion(user, contrasena);
-  }
-  
-  public int registrarcarrera(int id_tarifa, java.lang.String user, java.lang.String contrasena, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double km_recorridos, double precio, java.lang.String fecha, double latitud_origen, double longitud_origen, double latitud_destino, double longitud_destino) throws java.rmi.RemoteException{
-    if (registrarCarreras == null)
-      _initRegistrarCarrerasProxy();
-    return registrarCarreras.registrarcarrera(id_tarifa, user, contrasena, origen, destino, tiempo, km_recorridos, precio, fecha, latitud_origen, longitud_origen, latitud_destino, longitud_destino);
+    return registrarCarreras.validacionusuario(userr);
   }
   
   public boolean registrarusuario(java.lang.String nombres, java.lang.String apellidos, java.lang.String correo, java.lang.String cedula, java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
@@ -62,10 +56,16 @@ public class RegistrarCarrerasProxy implements com.servicios.funciones.Registrar
     return registrarCarreras.registrarusuario(nombres, apellidos, correo, cedula, user, contrasena);
   }
   
-  public boolean validacionusuario(java.lang.String userr) throws java.rmi.RemoteException{
+  public int registrarcarrera(int id_tarifa, java.lang.String user, java.lang.String origen, java.lang.String destino, java.lang.String tiempo, double km_recorridos, double precio, java.lang.String fecha, double latitud_origen, double longitud_origen, double latitud_destino, double longitud_destino) throws java.rmi.RemoteException{
     if (registrarCarreras == null)
       _initRegistrarCarrerasProxy();
-    return registrarCarreras.validacionusuario(userr);
+    return registrarCarreras.registrarcarrera(id_tarifa, user, origen, destino, tiempo, km_recorridos, precio, fecha, latitud_origen, longitud_origen, latitud_destino, longitud_destino);
+  }
+  
+  public boolean iniciarsesion(java.lang.String user, java.lang.String contrasena) throws java.rmi.RemoteException{
+    if (registrarCarreras == null)
+      _initRegistrarCarrerasProxy();
+    return registrarCarreras.iniciarsesion(user, contrasena);
   }
   
   

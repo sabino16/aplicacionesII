@@ -44,10 +44,6 @@
 		<textbox id="textbox_usuario" constraint="no empty" />
 	</row>
 	<row>
-		<label value="Contraseña:" />
-		<textbox id="textbox_contrasena" constraint="no empty" />
-	</row>
-	<row>
 		<label value="latitud origen:" />
 		<doublebox id="textbox_latitud_origen" constraint="no empty" />
 	</row>

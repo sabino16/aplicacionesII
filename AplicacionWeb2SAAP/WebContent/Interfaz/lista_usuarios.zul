@@ -1,7 +1,7 @@
 <?page title="Lista de Usuarios" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Lista de Usuarios" border="normal" height="100%" id="WinListaUsuarios"
-apply="com.aplicaciones.controlador.ListaUsuarioControlador">
+<window title="Lista de Usuarios" border="none" height="100%" id="WinListaUsuarios"
+apply="com.aplicaciones.controlador.ListaUsuarioControlador" contentStyle="overflow:auto">
 <listbox id="listaUsuarios" mold="paging" pageSize="5"
 		multiple="false" width="100%"
 		emptyMessage="No clients found in the result">

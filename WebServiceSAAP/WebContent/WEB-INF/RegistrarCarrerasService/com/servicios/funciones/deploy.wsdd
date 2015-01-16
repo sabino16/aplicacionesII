@@ -10,14 +10,20 @@
       <parameter name="className" value="com.servicios.funciones.RegistrarCarreras"/>
       <parameter name="wsdlPortType" value="RegistrarCarreras"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="iniciarsesion" qname="operNS:iniciarsesion" returnQName="retNS:iniciarsesionReturn" returnType="rtns:boolean" soapAction="">
+      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="validacionusuario" qname="operNS:validacionusuario" returnQName="retNS:validacionusuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userr" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registrarusuario" qname="operNS:registrarusuario" returnQName="retNS:registrarusuarioReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nombres" type="tns:string"/>
+        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:apellidos" type="tns:string"/>
+        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:correo" type="tns:string"/>
+        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cedula" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:contrasena" type="tns:string"/>
       </operation>
       <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registrarcarrera" qname="operNS:registrarcarrera" returnQName="retNS:registrarcarreraReturn" returnType="rtns:int" soapAction="">
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id_tarifa" type="tns:int"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user" type="tns:string"/>
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:contrasena" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:origen" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:destino" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tiempo" type="tns:string"/>
@@ -29,16 +35,9 @@
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:latitud_destino" type="tns:double"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:longitud_destino" type="tns:double"/>
       </operation>
-      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="registrarusuario" qname="operNS:registrarusuario" returnQName="retNS:registrarusuarioReturn" returnType="rtns:boolean" soapAction="">
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nombres" type="tns:string"/>
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:apellidos" type="tns:string"/>
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:correo" type="tns:string"/>
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:cedula" type="tns:string"/>
+      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="iniciarsesion" qname="operNS:iniciarsesion" returnQName="retNS:iniciarsesionReturn" returnType="rtns:boolean" soapAction="">
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:user" type="tns:string"/>
         <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:contrasena" type="tns:string"/>
-      </operation>
-      <operation xmlns:operNS="http://funciones.servicios.com" xmlns:retNS="http://funciones.servicios.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="validacionusuario" qname="operNS:validacionusuario" returnQName="retNS:validacionusuarioReturn" returnType="rtns:boolean" soapAction="">
-        <parameter xmlns:pns="http://funciones.servicios.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userr" type="tns:string"/>
       </operation>
       <parameter name="allowedMethods" value="validacionusuario registrarusuario registrarcarrera iniciarsesion"/>
 

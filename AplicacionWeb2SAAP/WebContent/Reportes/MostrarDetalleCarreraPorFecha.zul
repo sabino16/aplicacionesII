@@ -1,0 +1,42 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="FORMULARIO DATOS CARRERA POR USUARIO" border="none" 
+apply="com.aplicaciones.controlador.MostrarCarreraPorUsuario" mode="modal"
+contentStyle="overflow:auto" closable="true" width="80%" height="80%">
+		<separator></separator>
+		<label value="Usuario: "/>
+		<label value="" id="lblUsuario"/>
+		<separator></separator>
+<listbox id="lista_MostrarCarreraFecha" mold="paging" pageSize="2"  
+		multiple="false" width="100%"
+		emptyMessage="No existen carreras con los valores ingresados">
+		
+		<auxhead sclass="category-center" >
+			<auxheader label="Detalle de la Carrera Por Usuario" colspan="2"
+				rowspan="1" />
+				
+		</auxhead>
+
+		<listhead sizable="true" menupopup="auto">
+			<listheader label="Origen" sort="auto(origen)"/>
+			<listheader label="Destino" sort="auto(destino)"/>
+			<listheader label="KM Recorridos" sort="auto(kmRecorridos)"/>
+			<listheader label="Fecha" sort="auto(fecha)"/>
+			<listheader label="Precio" sort="auto(precio)"/>
+			
+			</listhead>
+		<template name="model">  <!-- ESTE MODELO ES PARA CADA REGISTRO DE LA BASE DE DATOS -->
+			<listitem>
+				<listcell label="${each.origen} " />
+				<listcell label="${each.destino} " />
+				<listcell label="${each.tiempo} " />
+				<listcell label="${each.kmRecorridos} " />
+				<listcell label="${each.fecha} " />
+				<listcell label="${each.precio} " />
+			</listitem>
+		</template>
+	</listbox>
+
+</window>
+
+</zk>

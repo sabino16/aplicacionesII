@@ -6,9 +6,9 @@ import java.rmi.RemoteException;
 
 import javax.xml.rpc.ServiceException;
 
-import com.servicios.funciones.ConsultarCarreras;
 import com.servicios.funciones.ConsultarCarrerasServiceLocator;
 import com.servicios.funciones.ConsultarCarrerasSoapBindingStub;
+
 
 public class PruebadeServicio {
 	

@@ -278,8 +278,8 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 					Session session;
 					session=Sessions.getCurrent();
 					session.setAttribute("CarreraSeleccionada", CarreraSeleccionada);
-					
-					Window win = (Window)Executions.createComponents("Reportes/VisualizarCarrera.zul", centro, null);
+					Window win = (Window)Executions.createComponents("Reportes/VisualizarCarrera.zul", null, null);
+					//Window win = (Window)Executions.createComponents("Reportes/VisualizarCarrera.zul", centro, null);
 				}
 			
 }
