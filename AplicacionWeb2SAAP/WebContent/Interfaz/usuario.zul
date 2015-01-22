@@ -28,12 +28,14 @@ apply="com.aplicaciones.controlador.UsuarioControlador" id="WinUsuario" contentS
 				
 				<row>
 					<label value="Cédula:" />
-					<textbox id="textbox_Cedula" constraint="no empty" width="80%"/>
+					<textbox id="textbox_Cedula" constraint="no empty" width="80%" maxlength="10"/>
+					<label value="" id="lbl_cedula"/>
 				</row>
 				
 				<row>
 					<label value="E-mail" />
 					<textbox id="textbox_Email" constraint="no empty" width="80%"/>
+					<label value="" id="lbl_email"/>
 				</row>
 				
 				<row>

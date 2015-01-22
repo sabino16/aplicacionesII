@@ -44,7 +44,7 @@ public class LoginControlador extends GenericForwardComposer<Component>{
 		
 		Usuario	usuari = uh.buscarUsuario(usuario, clave);
 		
-		if(usuari!=null){
+		if(usuari!=null && usuari.getTipoUsuario().getIdTipousuario()==2){
 			Session session;
 			session=Sessions.getCurrent();
 			session.setAttribute("usuario", usuari);
