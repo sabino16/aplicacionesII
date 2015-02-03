@@ -12,6 +12,9 @@ contentStyle="overflow:auto">
 		<auxhead sclass="category-center" >
 			<auxheader label="Lista General de Carreras" colspan="2"
 				rowspan="1" />
+		<auxheader colspan="1" rowspan="1">
+		<button id="button_buscar" label="buscar" width="70%" />
+		</auxheader>
 		</auxhead>
 
 		<auxhead sclass="category-center">

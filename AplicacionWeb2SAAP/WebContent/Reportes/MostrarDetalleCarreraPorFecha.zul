@@ -29,7 +29,6 @@ contentStyle="overflow:auto" closable="true" width="80%" height="80%">
 			<listitem>
 				<listcell label="${each.origen} " />
 				<listcell label="${each.destino} " />
-				<listcell label="${each.tiempo} " />
 				<listcell label="${each.kmRecorridos} " />
 				<listcell label="${each.fecha} " />
 				<listcell label="${each.precio} " />

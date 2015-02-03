@@ -8,8 +8,11 @@ id="WinReportevalor" contentStyle="overflow:auto">
 		emptyMessage="No existen carreras con los valores ingresados">
 		
 		<auxhead sclass="category-center" >
-			<auxheader label="Valor de Carreras por Usuario" colspan="2"
+			<auxheader label="Valor de Carreras por Usuario" colspan="1"
 				rowspan="1" />
+		<auxheader colspan="1" rowspan="1">
+				<button id="button_buscar" label="buscar" width="70%" />
+			</auxheader>
 		</auxhead>
 		<auxhead sclass="category-center">
 			<auxheader colspan="1" rowspan="1">

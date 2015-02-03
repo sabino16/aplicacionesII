@@ -11,10 +11,12 @@ apply="com.aplicaciones.controlador.ListaUsuarioControlador" contentStyle="overf
 				rowspan="1" />
 		</auxhead>
 		<auxhead sclass="category-center">
-
 			<auxheader colspan="1" rowspan="1">
 				<label value="Apellidos "></label>
 				<textbox id="textbox_Apellidos" ></textbox>
+			</auxheader>
+			<auxheader colspan="1" rowspan="1">
+				<button id="button_buscar" label="buscar" width="70%" />
 			</auxheader>
 		</auxhead>
 

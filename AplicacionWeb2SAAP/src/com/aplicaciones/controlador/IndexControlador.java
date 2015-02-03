@@ -23,7 +23,6 @@ import com.aplicacionesa.modelo.Usuario;
 public class IndexControlador extends GenericForwardComposer<Component> {
 	
 	Menu menuUsuarios;
-	Menu menuCarreras;
 	Menu menuConsultas;
 	Menu menuReportes;
 	
@@ -31,7 +30,6 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 	Menuitem menuitemUEditar;
 	Menuitem menuitemUEliminar;
 	Menuitem menuitemUVisualizar;
-	Menuitem menuitemCVisualizar;
 	Menuitem menuitemRCarreras;
 	Menuitem menuitemRPasajeros;
 	Menuitem menuitemRRCarrerasFechas;
@@ -70,18 +68,6 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 		menuCliente.appendChild(menuitemUVisualizar);
 		menuUsuarios.appendChild(menuCliente);
 		barraMenu.appendChild(menuUsuarios);
-		
-		menuCarreras = new Menu("Carreras");
-		menuCarreras.setVisible(false);
-		Menupopup menuHabitacion = new Menupopup();
-		menuitemCVisualizar = new Menuitem("Visualizar");
-		menuitemCVisualizar.setVisible(false);
-		menuitemCVisualizar.setValue("Interfaz/Lista_carrera.zul");
-		menuitemCVisualizar.addEventListener("onClick", new MenuListener());
-				
-		menuHabitacion.appendChild(menuitemCVisualizar);
-		menuCarreras.appendChild(menuHabitacion);
-		barraMenu.appendChild(menuCarreras);
 		
 		
 		menuConsultas = new Menu("Consultas");
@@ -166,14 +152,12 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 				lblUsuario.setValue("USUARIO: "+ user.getUser());
 				lblNombre.setValue("NOMBRE: "+ user.getNombre()+" "+user.getApellido());
 				menuUsuarios.setVisible(true);
-				menuCarreras.setVisible(true);
 				menuConsultas.setVisible(true);
 				menuReportes.setVisible(true);
 				menuitemUIngresar.setVisible(true);
 				menuitemUEditar.setVisible(true);
 				menuitemUEliminar.setVisible(true);
 				menuitemUVisualizar.setVisible(true);
-				menuitemCVisualizar.setVisible(true);
 				menuitemRCarreras.setVisible(true);
 				menuitemRPasajeros.setVisible(true);
 				menuitemRRCarrerasFechas.setVisible(true);
@@ -182,14 +166,12 @@ public class IndexControlador extends GenericForwardComposer<Component> {
 			lblUsuario.setValue(" ");
 			lblNombre.setValue(" ");
 			menuUsuarios.setVisible(false);
-			menuCarreras.setVisible(false);
 			menuConsultas.setVisible(false);
 			menuReportes.setVisible(false);
 			menuitemUIngresar.setVisible(false);
 			menuitemUEditar.setVisible(false);
 			menuitemUEliminar.setVisible(false);
 			menuitemUVisualizar.setVisible(false);
-			menuitemCVisualizar.setVisible(false);
 			menuitemRCarreras.setVisible(false);
 			menuitemRPasajeros.setVisible(false);
 			menuitemRRCarrerasFechas.setVisible(false);

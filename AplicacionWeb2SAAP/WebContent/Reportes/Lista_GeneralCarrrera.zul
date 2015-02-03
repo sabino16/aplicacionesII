@@ -10,39 +10,42 @@ apply="com.aplicaciones.controlador.ListaGeneralCarreraControlador" contentStyle
 		<auxhead sclass="category-center" >
 			<auxheader label="Lista General de Carreras" colspan="2"
 				rowspan="1" />
+				<auxheader colspan="1" rowspan="1">
+				<button id="button_buscar" label="buscar" width="70%" />
+			</auxheader>
 		</auxhead>
 		<auxhead sclass="category-center">
 
 			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_usuario" ></textbox>
+				<textbox id="textbox_usuario" width="85%"></textbox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_tarifa" ></textbox>
+				<textbox id="textbox_tarifa" width="85%"></textbox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_origen" ></textbox>
+				<textbox id="textbox_origen" width="85%"></textbox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_destino" ></textbox>
+				<textbox id="textbox_destino" width="85%"></textbox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<textbox id="textbox_tiempo" ></textbox>
+				<textbox id="textbox_tiempo" width="85%"></textbox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<doublebox id="textbox_km_recorridos" ></doublebox>
+				<doublebox id="textbox_km_recorridos" width="85%"></doublebox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<doublebox id="textbox_precio" ></doublebox>
+				<doublebox id="textbox_precio" width="85%"></doublebox>
 			</auxheader>
 			
 			<auxheader colspan="1" rowspan="1">
-				<datebox id="calendar_fecha"/>
+				<datebox id="calendar_fecha" width="85%"/>
 			</auxheader>
 			
 		</auxhead>

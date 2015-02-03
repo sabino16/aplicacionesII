@@ -11,6 +11,7 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -35,6 +36,7 @@ public class ListaGeneralPasajerosControlador extends GenericForwardComposer<Com
 	Textbox textbox_Nombres, textbox_Apellidos, textbox_Cedula;
 	Window WinListaPasajeros;
 	Center centro;
+	Button button_buscar;
 	
 	
 	@Override
@@ -77,24 +79,8 @@ public class ListaGeneralPasajerosControlador extends GenericForwardComposer<Com
 	}
 	
 	
-	public void onChange$textbox_Nombres(){
-		
+	public void onClick$button_buscar(){
 		filtrarPasajerosTodosFiltros(textbox_Nombres.getValue(), textbox_Apellidos.getValue(), textbox_Cedula.getValue());
-		
-	}
-	
-	
-	public void onChange$textbox_Apellidos(){
-		
-		filtrarPasajerosTodosFiltros(textbox_Nombres.getValue(), textbox_Apellidos.getValue(), textbox_Cedula.getValue());
-		
-	}
-	
-	
-	public void onChange$textbox_Cedula(){
-		
-		filtrarPasajerosTodosFiltros(textbox_Nombres.getValue(), textbox_Apellidos.getValue(), textbox_Cedula.getValue());
-		
 	}
 		
 	

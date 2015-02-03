@@ -11,6 +11,7 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Datebox;
 import org.zkoss.zul.ListModelList;
@@ -40,6 +41,7 @@ public class ReporteValorControlador extends GenericForwardComposer<Component>{
 	Datebox calendar_fecha1, calendar_fecha2;
 	Window WinReportevalor;
 	Center centro;
+	Button button_buscar;
 	
 	@Override
 	public void doAfterCompose(Component comp) throws Exception {
@@ -69,23 +71,15 @@ public class ReporteValorControlador extends GenericForwardComposer<Component>{
 		gh.closeEntityManager(em);
 	}
 	
-	public void onChange$calendar_fecha2(){
+	public void onClick$button_buscar(){
 		if((calendar_fecha2.getValue()!=null)&&(calendar_fecha1.getValue()!=null)){
 			if(calendar_fecha1.getValue().before(calendar_fecha2.getValue()) ){
 				cargarlista();
 			}else{
 				alert("La segunda fecha debe ser mayor que la primera");
 			}	
-		}
-	}
-	
-	public void onChange$calendar_fecha1(){
-		if((calendar_fecha2.getValue()!=null)&&(calendar_fecha1.getValue()!=null)){
-			if(calendar_fecha1.getValue().before(calendar_fecha2.getValue()) ){
-				cargarlista();
-			}else{
-				alert("La segunda fecha debe ser mayor que la primera");
-			}	
+		}else{
+			alert("Faltan Datos");
 		}
 	}
 	

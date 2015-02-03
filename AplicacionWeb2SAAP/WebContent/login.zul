@@ -21,7 +21,7 @@
 				
 			</row>
 			<row align="center" spans="2">
-				<label id="lblMensaje" style="color:red" value="Mensaje"></label>
+				<label id="lblMensaje" style="color:red" value=""></label>
 			</row>
 		</rows>
 	</grid>

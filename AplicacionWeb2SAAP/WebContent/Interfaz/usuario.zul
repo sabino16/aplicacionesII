@@ -54,8 +54,8 @@ apply="com.aplicaciones.controlador.UsuarioControlador" id="WinUsuario" contentS
 				</row>
 				
 				<row align="center">
-					<button id="btnOpcion" label="" width="20%" visible="false" />
-					<button id="btnLimpiar" label="Limpiar" width="20%"/>
+					<button id="btnOpcion" label="" width="30%" visible="false" />
+					<button id="btnLimpiar" label="Limpiar" width="30%"/>
 				</row>
 				
 			</rows>

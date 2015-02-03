@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Doublebox;
@@ -47,6 +48,7 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 			Datebox calendar_fecha;
 			Window WinListaCarreras;
 			Center centro;
+			Button button_buscar;
 			
 			@Override
 			public void doAfterCompose(Component comp) throws Exception {
@@ -237,38 +239,9 @@ public class ListaGeneralCarreraControlador extends GenericForwardComposer<Compo
 				
 			}
 			
-			public void onChange$textbox_usuario(){
+			public void onClick$button_buscar(){
 				filtrar();
-			}
-			
-			public void onChange$textbox_tarifa(){
-				filtrar();
-			}
-			
-			public void onChange$textbox_precio(){
-				filtrar();
-			}
-			
-			public void onChange$textbox_origen(){
-				filtrar();
-			}
-			
-			public void onChange$textbox_destino(){
-				filtrar();
-			}
-			
-			public void onChange$textbox_tiempo(){
-				filtrar();
-			}
-			
-			public void onChange$textbox_km_recorridos(){
-				filtrar();
-			}
-			
-			public void onChange$calendar_fecha(){
-				filtrar();
-			}
-			
+			}		
 			
 			public void onSelect$lista_GeneralCarrera(){
 				if(centro.getFirstChild()!=null){

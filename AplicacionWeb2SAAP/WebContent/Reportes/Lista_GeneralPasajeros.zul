@@ -10,24 +10,29 @@ apply="com.aplicaciones.controlador.ListaGeneralPasajerosControlador" contentSty
 		<auxhead sclass="category-center" >
 			<auxheader label="Lista de Pasajeros" colspan="1"
 				rowspan="1" />
+			<auxheader colspan="1" rowspan="1">
+			<button id="button_buscar" label="buscar" width="70%" />
+			</auxheader>
 		</auxhead>
 		<auxhead sclass="category-center">
 			<auxheader colspan="1" rowspan="1">
-				<label value="Nombre"></label>
-				<textbox id="textbox_Nombres" ></textbox>
+				<label value="Nombre" width="32%"></label>
+				<textbox id="textbox_Nombres" width="65%"></textbox>
 			</auxheader>
 			<auxheader colspan="1" rowspan="1">
-				<label value="Apellido"></label>
-				<textbox id="textbox_Apellidos" ></textbox>
+				<label value="Apellido" width="32%"></label>
+				<textbox id="textbox_Apellidos" width="65%"></textbox>
 			</auxheader>
 			<auxheader colspan="1" rowspan="1">
-				<label value="Cedula"></label>
-				<textbox id="textbox_Cedula" ></textbox>
+				<label value="Cedula" width="32%"></label>
+				<textbox id="textbox_Cedula" width="65%"></textbox>
 			</auxheader>
 			<auxheader colspan="1" rowspan="1">
-				<label value="Usuario"></label>
-				<textbox id="textbox_Usuario" ></textbox>
+				<label value="Usuario" width="32%"></label>
+				<textbox id="textbox_Usuario" width="65%"></textbox>
 			</auxheader>
+			
+			
 		</auxhead>
 
 		<listhead sizable="true" menupopup="auto">

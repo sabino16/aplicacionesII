@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -40,6 +41,7 @@ public class ListaUsuarioControlador extends GenericForwardComposer<Component>{
 		Textbox textbox_Apellidos;
 		Window WinListaUsuarios;
 		Center centro;
+		Button button_buscar;
 		
 		@Override
 		public void doAfterCompose(Component comp) throws Exception {
@@ -100,10 +102,6 @@ public class ListaUsuarioControlador extends GenericForwardComposer<Component>{
 			em.getTransaction().commit();
 			gh.closeEntityManager(em);
 		}
-
-		public void onChange$textbox_Apellidos(){
-			filtrarUsuarioPorApellidos();
-		}
 		
 		public void onSelect$listaUsuarios(){
 			if(centro.getFirstChild()!=null){
@@ -112,10 +110,17 @@ public class ListaUsuarioControlador extends GenericForwardComposer<Component>{
 				Usuario UsuarioSeleccionado = listaUsuarios.getSelectedItem().getValue();
 				Session session;
 				session=Sessions.getCurrent();
+				validacion = session.getAttribute("accion").toString();
 				session.setAttribute("UsuarioSeleccionado", UsuarioSeleccionado);
+				if(validacion.equals("Visualizar")){
+					Window win = (Window)Executions.createComponents("Interfaz/visualizar_usuario.zul", null, null);
+				}else{
+					Window win = (Window)Executions.createComponents("Interfaz/usuario.zul", centro, null);
+				}
 				
-				Window win = (Window)Executions.createComponents("Interfaz/usuario.zul", centro, null);
 			}
 		
-		
+		public void onClick$button_buscar(){
+			filtrarUsuarioPorApellidos();
+		}
 }

@@ -12,6 +12,7 @@ import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Button;
 import org.zkoss.zul.Center;
 import org.zkoss.zul.Datebox;
 import org.zkoss.zul.Doublebox;
@@ -48,7 +49,7 @@ public class ListaGeneralPasajeroCarreraControlador extends GenericForwardCompos
 	Center centro;
 	Usuario usuario;
 	int ux=0;
-	
+	Button button_buscar;
 	
 	
 	
@@ -94,31 +95,9 @@ public class ListaGeneralPasajeroCarreraControlador extends GenericForwardCompos
 		}
     }
 
-	
-public void onChange$textbox_tarifa(){
-		
+public void onClick$button_buscar(){
 	filtrarCarreraPasajerosTodosFiltros();
-		
-	}
-
-public void onChange$textbox_origen(){
-	
-	filtrarCarreraPasajerosTodosFiltros();
-		
-	}
-
-public void onChange$textbox_destino(){
-	
-	filtrarCarreraPasajerosTodosFiltros();
-		
-	}
-
-public void onChange$calendar_fecha(){
-	
-	filtrarCarreraPasajerosTodosFiltros();
-	
-			
-	}
+}
 
 
 	public void filtrarCarreraPasajerosTodosFiltros(){
